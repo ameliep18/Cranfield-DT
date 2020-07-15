@@ -1,0 +1,70 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2{
+    text-align: center;
+}
+
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+.button {
+    width: 80px;
+}
+
+
+#conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.activities {
+    width: 300px;
+    border: 0.05mm solid black;
+    text-align: justify;
+    /* Marge intérieure */
+    padding: 0px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.coaching {
+    width: 320px;
+    border: 0.05mm solid black;
+    text-align: justify;
+    /* Marge intérieure */
+    padding: 0px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+table
+{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td, th /* Add a border on td and th balise */
+{
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    width: 180px;
+    padding: 10px 10px 10px 10px;
+}
+.button {
+    border: none;
+    width: 80px;
+}

@@ -1,0 +1,58 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2{
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse:collapse;
+}
+td {
+    padding:8px ;
+}
+img{
+    margin: 0 auto;
+    display: inline-block;
+}
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.fields {
+    width: 443px;
+}
+
+.mm {
+    color: black;
+    text-align: justify;
+    padding: 10px 150px 10px 150px ;
+    font-size: 15px;
+}
+
+p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 15px;
+}

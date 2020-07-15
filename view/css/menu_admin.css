@@ -1,0 +1,54 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: floralwhite;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: black;
+}
+
+ul li ul {
+    display:none;
+}
+ul li:hover ul {
+    display:block;
+
+}
+li:hover ul li {
+    float:none;
+}
+li ul {
+    position:absolute;
+}
+
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: antiquewhite;
+}
+
+
+p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 16px;
+}
