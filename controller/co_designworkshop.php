@@ -10,18 +10,19 @@ if (!isset($_SESSION)) {
 }
 
 //Allocate a value to each variable
-$id_creator = $_SESSION['id'];
-$title = $_POST['title'];
-$start_date = $_POST['startdate'];
-$end_date = $_POST['enddate'];
-$goals = $_POST['goals'];
-$id_judges = getIdFromName($bdd, $_POST['judges']);
-$id_technicians = getIdFromName($bdd, $_POST['coachees'])[0];
-$nb_groups = $_POST['nbgroup'];
+echo $title = $_POST['title'];
+echo $start_date = $_POST['startdate'];
+echo $end_date = $_POST['enddate'];
+echo $goals = $_POST['goals'];
+echo $id_coordinator = $_SESSION['id'];
+echo $id_judges = $_POST['judges'];
+echo $id_technicians = $_POST['technicians'];
+echo $nb_groups = $_POST['nbgroup'];
+echo $status = 0;
 
 if ($nb_groups=="1"){
-    $g1participants = $_POST['group1'];
-    $g1expert = $_POST['group1expert'];
+    echo $g1participants = $_POST['group1'];
+    echo $g1expert = $_POST['group1expert'];
     $g2participants = 0;
     $g2expert = 0;
     $g3participants = 0;
@@ -61,9 +62,9 @@ else if ($nb_groups=="4"){
 }
 
 //Create the coaching in the database
-createCoaching($bdd, $id_creator, $title, $start_date, $end_date, $goals, $id_judges, $id_technicians, $nb_groups, $g1participants, $g1expert, $g2participants, $g2expert, $g3participants, $g3expert, $g4participants, $g4expert);
+createWorkshop($bdd, $title, $start_date, $end_date, $goals, $id_coordinator, $id_judges, $id_technicians, $nb_groups, $g1participants, $g1expert, $g2participants, $g2expert, $g3participants, $g3expert, $g4participants, $g4expert, $status);
 
 
 //Go back to the homepage
-header('location: ../view/homepage.php');
+//header('location: ../view/homepage.php');
 /* amelie.piriou@gmail.com,javier.deolaneta@gmail.com,zhe.zhang@gmail.com */

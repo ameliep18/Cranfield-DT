@@ -6,7 +6,7 @@
     <?php
     // We start the session (this is required in all pages of our member section)
     session_start ();
-    //include('../controller/import_models.php');
+    include('../controller/import_models.php');
     include('menu_coordinator.php');?>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/co_designworkshop.css"/>
@@ -109,7 +109,7 @@
 </br></br>
 <h2>Design a new Design Thinking workshop</h2>
 </br>
-<form action="\Cranfield-OLC\controller\co_designworkshop.php" method="Post">
+<form action="\Cranfield-OLC-DT\controller\co_designworkshop.php" method="Post">
     <table>
         <tr>
             <td>Title</td>
@@ -140,11 +140,11 @@
             <td>
                 <select name="judges" class="fields" required>
                     <?php
-                    //$imax = sizeof($_SESSION['tab']);
-                    //for ($i=0; $i<$imax; $i=$i+4 ) { ?>
-                        <option VALUE="<?php //echo $_SESSION['tab'][$i];?> <?php //echo $_SESSION['tab'][$i+1];?> salut">
-                            <?php //echo $_SESSION['tab'][$i];?> <?php //echo $_SESSION['tab'][$i+1];?> salut</option>
-                    <?php //} ?>
+                    $imax = sizeof($_SESSION['tabJudges']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabJudges'][$i];?>">
+                            <?php echo $_SESSION['tabJudges'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
@@ -153,11 +153,11 @@
             <td>
                 <select name="technicians" class="fields" required>
                     <?php
-                    //$imax = sizeof($_SESSION['tab']);
-                    //for ($i=0; $i<$imax; $i=$i+4 ) { ?>
-                    <option VALUE="<?php //echo $_SESSION['tab'][$i];?> <?php //echo $_SESSION['tab'][$i+1];?> salut">
-                        <?php //echo $_SESSION['tab'][$i];?> <?php //echo $_SESSION['tab'][$i+1];?> salut</option>
-                    <?php //} ?>
+                    $imax = sizeof($_SESSION['tabTech']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabTech'][$i];?>">
+                            <?php echo $_SESSION['tabTech'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
@@ -174,61 +174,69 @@
         </tr>
         <tr>
             <td>First group participants' names, </br> separated by coma</td>
-            <td><textarea rows="3" id="group1" class="fields" style="display: block"> </textarea></td>
+            <td><textarea rows="3" id="group1" name="group1" class="fields" style="display: block"> </textarea></td>
         </tr>
         <tr>
             <td>First group's  expert</td>
             <td>
-                <select id="group1expert" class="fields" style="display: block" required>
-                    <option value="expert1">Expert1</option>
-                    <option value="expert2">Expert2</option>
-                    <option value="expert3">Expert3</option>
-                    <option value="expert4">Expert4</option>
+                <select id="group1expert" name="group1expert" class="fields" style="display: block" required>
+                    <?php
+                    $imax = sizeof($_SESSION['tabExperts']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
+                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
         <tr>
             <td> <span id="group2name" style="display: none"> Second group participants' names, </br> separated by coma </span> </td>
-            <td><textarea rows="3" id="group2" class="fields" style="display: none"> </textarea></td>
+            <td><textarea rows="3" id="group2" name="group2" class="fields" style="display: none"> </textarea></td>
         </tr>
         <tr>
             <td> <span id="namegroup2expert" style="display: none"> Second group's expert </span></td>
             <td>
-                <select id="group2expert" class="fields" style="display: none" required>
-                    <option value="expert1">Expert1</option>
-                    <option value="expert2">Expert2</option>
-                    <option value="expert3">Expert3</option>
-                    <option value="expert4">Expert4</option>
+                <select id="group2expert" name="group2expert" class="fields" style="display: none" required>
+                    <?php
+                    $imax = sizeof($_SESSION['tabExperts']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
+                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
         <tr>
             <td> <span id="group3name" style="display: none"> Third group participants' names, </br> separated by coma </span> </td>
-            <td><textarea rows="3" id="group3" class="fields" style="display: none"> </textarea></td>
+            <td><textarea rows="3" id="group3" name="group3" class="fields" style="display: none"> </textarea></td>
         </tr>
         <tr>
             <td> <span id="namegroup3expert" style="display: none"> Third group's expert </span></td>
             <td>
-                <select id="group3expert" class="fields" style="display: none" required>
-                    <option value="expert1">Expert1</option>
-                    <option value="expert2">Expert2</option>
-                    <option value="expert3">Expert3</option>
-                    <option value="expert4">Expert4</option>
+                <select id="group3expert" name="group3expert" class="fields" style="display: none" required>
+                    <?php
+                    $imax = sizeof($_SESSION['tabExperts']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
+                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
         <tr>
             <td> <span id="group4name" style="display: none"> Fourth group participants' names, </br> separated by coma </span> </td>
-            <td><textarea rows="3" id="group4" class="fields" style="display: none"> </textarea></td>
+            <td><textarea rows="3" id="group4" name="group4" class="fields" style="display: none"> </textarea></td>
         </tr>
         <tr>
             <td> <span id="namegroup4expert" style="display: none"> Fourth group's expert </span></td>
             <td>
-                <select id="group4expert" class="fields" style="display: none" required>
-                    <option value="expert1">Expert1</option>
-                    <option value="expert2">Expert2</option>
-                    <option value="expert3">Expert3</option>
-                    <option value="expert4">Expert4</option>
+                <select id="group4expert" name="group4expert" class="fields" style="display: none" required>
+                    <?php
+                    $imax = sizeof($_SESSION['tabExperts']);
+                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+                        <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
+                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                    <?php } ?>
                 </select>
             </td>
         </tr>
