@@ -1,7 +1,7 @@
 <?php
 
 //Import the models
-include('../model/employee.php');
+include('../model/stakeholders.php');
 
 //Start the session if it's not already done
 if (!isset($_SESSION)) {

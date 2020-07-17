@@ -19,13 +19,13 @@ if (!isset($_SESSION)) {
         include('menu_coordinator.php');
     }?>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/admin_designcoaching.css"/>
+    <link rel="stylesheet" type="text/css" href="css/co_designworkshop.css"/>
 </head>
 </br></br>
 <body>
 <h2>Modify my password</h2>
 </br>
-<form action="\Cranfield-OLC\controller\modifypassword.php" method="Post">
+<form action="\Cranfield-OLC-DT\controller\modifypassword.php" method="Post">
     <table>
         <tr>
             <td>New password</td>

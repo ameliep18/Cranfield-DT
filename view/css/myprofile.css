@@ -1,0 +1,53 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2, h3{
+    text-align: center;
+}
+
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+#conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.info {
+    width: 200px;
+    border: 0.05mm solid black;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 0px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.info .inf{
+    text-align: justify;
+}
+
+
+.cert {
+    width: 270px;
+    height: 125px;
+    border: 0.05mm solid black;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 0px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}

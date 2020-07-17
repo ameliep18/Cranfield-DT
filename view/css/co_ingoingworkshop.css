@@ -1,0 +1,56 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+}
+
+h2 {
+    text-align: center;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+}
+
+p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 15px;
+}
+
+table
+{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td, th /* Add a border on td and th balise */
+{
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    width: 180px;
+    padding: 10px 10px 10px 10px;
+}
+
+img{
+    margin: 0 auto;
+    display: inline-block;
+}
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.button {
+    border: none;
+    width: 80px;
+}

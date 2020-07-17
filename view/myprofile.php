@@ -36,35 +36,26 @@ if (!isset($_SESSION)) {
         <Strong>Username: </Strong><?php echo $_SESSION['username']; ?> </br></br>
         <Strong>Job: </Strong><?php echo $_SESSION['job']; ?> </br></br>
         <Strong>Status: </Strong><?php
-        if ($_SESSION['status']==2) {
-            echo 'Admin';
-        }
-        if ($_SESSION['status']==1) {
-            echo 'Coach';
-        }
-        if ($_SESSION['status']==0) {
-            echo 'Coachee';
-        }?> </br>
+            if ($_SESSION['status']==4) {
+                echo 'Technician';
+            }
+            if ($_SESSION['status']==3) {
+                echo 'Expert';
+            }
+            if ($_SESSION['status']==2) {
+                echo 'Judge';
+            }
+            if ($_SESSION['status']==1) {
+                echo 'Participant';
+            }
+            if ($_SESSION['status']==0) {
+                echo 'Coordinator';
+            }?>
+         </br>
         </br></br>
         </div>
         <input type="button" class="button" onclick=window.location.href="../view/modifypassword.php" value="Modify my password" />
     </div>
-    <?php
-    if ($_SESSION['status']==1) { ?>
-
-    <div class="cert">
-        <h3>My coach e-certification</h3></br>
-        <?php if ($_SESSION['isCoach']==0) { ?>
-        You are not certified yet.
-        </br></br></br>
-        <input type="button" class="button" onclick=window.location.href="../view/coach_viewecertification.php" value="Take the e-certification" />
-        <?php }
-        else if ($_SESSION['isCoach']==1) { ?>
-            Your result: <?php echo $_SESSION['grade'];?>/10
-            </br></br> </br> <strong>Congratulations!</strong>
-        <?php } ?>
-    </div>
-    <?php } ?>
 
 </div>
 
