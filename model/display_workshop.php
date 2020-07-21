@@ -106,22 +106,74 @@ function displayMyRequestedCoachings(PDO $bdd, $id, $status) {
     }
     return $tab;
 }
+*/
 
-//Function to display one requested coaching
-function displayOneRequestedCoachings(PDO $bdd, $id) {
-    $statement = $bdd->prepare('SELECT * FROM coaching WHERE status=0 AND id_coaching=:id');
+//Function to display one requested workshop
+function displayOneWorkshop(PDO $bdd, $id, $status) {
+    $statement = $bdd->prepare('SELECT * FROM workshop WHERE status=:status AND id_workshop=:id');
     $statement->bindParam(":id", $id);
+    $statement->bindParam(":status", $status);
     $statement->execute();
 
 // Display each coaching info
     $tab=array();
     while ($data = $statement->fetch()) {
-        $tab[] = $data['topic'];
-        $tab[] = $data['justification'];
+        echo $tab[] = $data['id_workshop'];
+        echo $tab[] = $data['title'];
+        $tab[] = $data['start_date'];
+        $tab[] = $data['end_date'];
+        $tab[] = $data['goals'];
+        $tab[] = $data['id_coordinator'];
+        $tab[] = $data['id_judges'];
+        $tab[] = $data['id_technicians'];
+        $tab[] = $data['nb_groups'];
+
+        if ($data['nb_groups']==1) {
+            $tab[] = $data['g1participants'];
+            $tab[] = $data['g1expert'];
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+        }
+        else if ($data['nb_groups']==2) {
+            $tab[] = $data['g1participants'];
+            $tab[] = $data['g1expert'];
+            $tab[] = $data['g2participants'];
+            $tab[] = $data['g2expert'];
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+            $tab[] = "";
+        }
+        else if ($data['nb_groups']==3) {
+            $tab[] = $data['g1participants'];
+            $tab[] = $data['g1expert'];
+            $tab[] = $data['g2participants'];
+            $tab[] = $data['g2expert'];
+            $tab[] = $data['g3participants'];
+            $tab[] = $data['g3expert'];
+            $tab[] = "";
+            $tab[] = "";
+        }
+        else if ($data['nb_groups']==4) {
+            $tab[] = $data['g1participants'];
+            $tab[] = $data['g1expert'];
+            $tab[] = $data['g2participants'];
+            $tab[] = $data['g2expert'];
+            $tab[] = $data['g3participants'];
+            $tab[] = $data['g3expert'];
+            $tab[] = $data['g4participants'];
+            $tab[] = $data['g4expert'];
+        }
+
     }
     return $tab;
 }
 
+/*
 //Function to display one coaching title
 function displayCoachingTitle(PDO $bdd, $id_coaching) {
     $statement = $bdd->prepare('SELECT title FROM coaching WHERE id_coaching=:id');

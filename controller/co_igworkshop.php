@@ -10,10 +10,10 @@ if (!isset($_SESSION)) {
 }
 
 //Display the list of workshops
-$tab1 = displayWorkshop($bdd, 0);
+$tab0 = displayWorkshop($bdd, 1);
 
 //Add the list of workshops in a session variable
-$_SESSION['tabWorkshop'] = $tab1;
+$_SESSION['tabIGWorkshop'] = $tab0;
 
 //Display the view
-header('location: ../view/co_ingoingworkshop.php');
+header('location: ../view/co_igworkshop.php');

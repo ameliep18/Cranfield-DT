@@ -14,7 +14,7 @@
 
 <body>
 </br></br>
-<h2>In-going Workshops</h2>
+<h2>Pending Workshops</h2>
 </br>
 
 <table>
@@ -29,14 +29,6 @@
         <th>Judges</th>
         <th>Technicians</th>
         <th>Number of group(s)</th>
-        <th>First group's participants</th>
-        <th>First group's expert</th>
-        <th>Second group's participants</th>
-        <th>Second group's expert</th>
-        <th>Third group's participants</th>
-        <th>Third group's expert</th>
-        <th>Fourth group's participants</th>
-        <th>Fourth group's expert</th>
     </tr>
     <?php
     $imax = sizeof($_SESSION['tabWorkshop']);
@@ -61,7 +53,7 @@
 
     <tbody> <!-- Content of the table -->
         <tr>
-            <td><?php echo $_SESSION['tabWorkshop'][$i];?></td>
+            <td><?php echo $id = $_SESSION['tabWorkshop'][$i];?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+1]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+2]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+3]; ?></td>
@@ -70,9 +62,7 @@
             <td><?php echo $_SESSION['tabWorkshop'][$i+6]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+7]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+8]; ?></td>
-            <td><?php echo $_SESSION['tabWorkshop'][$i+9]; ?></td>
-            <td><?php echo $_SESSION['tabWorkshop'][$i+10]; ?></td>
-            <?php
+            <?php /*
             if ($_SESSION['tabWorkshop'][$i+8]==1) { ?>
                 <td> – </td>
                 <td> – </td>
@@ -105,10 +95,15 @@
                 <td> <?php echo $_SESSION['tabWorkshop'][$i+14]; ?> </td>
                 <td> <?php echo $_SESSION['tabWorkshop'][$i+15]; ?> </td>
                 <td> <?php echo $_SESSION['tabWorkshop'][$i+16]; ?> </td>
-            <?php }?>
+            <?php } */?>
 
+
+    <td class="button">
+        <input type="button" onclick=window.location.href="../controller/co_viewpendingworkshop?id=<?php echo $id?>" value="View/Edit" />
+    </td>
         </tr>
     <?php } ?>
+
     </tbody>
 </table>
 

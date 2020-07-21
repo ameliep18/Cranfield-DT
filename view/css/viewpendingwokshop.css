@@ -29,14 +29,10 @@ h2, h3{
 }
 
 .info {
-    width: 200px;
+    width: 300px;
     border: 0.05mm solid black;
     text-align: center;
     /* Marge intérieure */
-    padding: 0px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     margin: 10px 0px 0px 0px; /* Marge extérieure */
-}
-
-.info .inf{
-    text-align: justify;
 }
