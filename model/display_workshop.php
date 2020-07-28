@@ -28,48 +28,6 @@ function displayWorkshop(PDO $bdd, $status) {
         $tab[] = $data['id_judges'];
         $tab[] = $data['id_technicians'];
         $tab[] = $data['nb_groups'];
-
-        if ($data['nb_groups']==1) {
-            $tab[] = $data['g1participants'];
-            $tab[] = $data['g1expert'];
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-        }
-        else if ($data['nb_groups']==2) {
-            $tab[] = $data['g1participants'];
-            $tab[] = $data['g1expert'];
-            $tab[] = $data['g2participants'];
-            $tab[] = $data['g2expert'];
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-            $tab[] = "";
-        }
-        else if ($data['nb_groups']==3) {
-            $tab[] = $data['g1participants'];
-            $tab[] = $data['g1expert'];
-            $tab[] = $data['g2participants'];
-            $tab[] = $data['g2expert'];
-            $tab[] = $data['g3participants'];
-            $tab[] = $data['g3expert'];
-            $tab[] = "";
-            $tab[] = "";
-        }
-        else if ($data['nb_groups']==4) {
-            $tab[] = $data['g1participants'];
-            $tab[] = $data['g1expert'];
-            $tab[] = $data['g2participants'];
-            $tab[] = $data['g2expert'];
-            $tab[] = $data['g3participants'];
-            $tab[] = $data['g3expert'];
-            $tab[] = $data['g4participants'];
-            $tab[] = $data['g4expert'];
-        }
-
     }
     return $tab;
 }
@@ -173,6 +131,42 @@ function displayOneWorkshop(PDO $bdd, $id, $status) {
     return $tab;
 }
 
+//Function to display my workshop
+function displayMyWorkshop(PDO $bdd, $id_workshop) {
+    $statement = $bdd->prepare('SELECT * FROM workshop WHERE id_workshop=:id');
+    $statement->bindParam(":id", $id_workshop);
+    $statement->execute();
+
+// Display workshop info
+    $tab=array();
+    while ($data = $statement->fetch()) {
+        echo $tab[] = $data['id_workshop'];
+        echo $tab[] = $data['title'];
+        $tab[] = $data['start_date'];
+        $tab[] = $data['end_date'];
+        $tab[] = $data['goals'];
+        $tab[] = $data['id_coordinator'];
+        $tab[] = $data['id_judges'];
+        $tab[] = $data['id_technicians'];
+        $tab[] = $data['nb_groups'];
+    }
+    return $tab;
+}
+function displayMyGroup(PDO $bdd, $id_group) {
+    $statement = $bdd->prepare('SELECT * FROM workshop_group WHERE id_group=:id');
+    $statement->bindParam(":id", $id_group);
+    $statement->execute();
+
+// Display workshop info
+    $tab=array();
+    while ($data = $statement->fetch()) {
+        echo $tab[] = $data['id_group'];
+        echo $tab[] = $data['id_workshop'];
+        echo $tab[] = $data['id_participants'];
+        echo $tab[] = $data['id_expert'];
+    }
+    return $tab;
+}
 /*
 //Function to display one coaching title
 function displayCoachingTitle(PDO $bdd, $id_coaching) {
@@ -337,3 +331,14 @@ function getCoachees(PDO $bdd, $id_coaching) {
     }
     return $tabresult;
 } */
+
+//Function to display the ID of the workshop knowing his title
+function getIdFromTitle(PDO $bdd, $title) {
+    $statement = $bdd->prepare('SELECT id_workshop FROM workshop WHERE title=:title');
+    $statement->bindParam(":title", $title);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $id = $data['id_workshop'];
+    }
+    return $id;
+}

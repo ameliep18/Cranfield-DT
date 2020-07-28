@@ -1,0 +1,52 @@
+<?php //Start the session if it's not already done
+if (!isset($_SESSION)) {
+    session_start();
+}?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <div class="header"><img src="img\header.png"></div>
+    <?php
+    if ($_SESSION['status']==2) {
+        include('menu_judge.php');
+    }
+    if ($_SESSION['status']==1) {
+        include('menu_participant.php');
+    }
+    if ($_SESSION['status']==0) {
+        include('menu_coordinator.php');
+    }?>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/viewpendingwokshop.css"/>
+</head>
+
+<body>
+</br></br>
+<h2>My Design Thinking Workshop : </br> <?php echo $_SESSION['tabMyWorkshop'][1]; ?></h2>
+</br>
+<div id="conteneur">
+    <div class="workshop">
+        <h3>Workshop's information</h3> </br>
+        <Strong>Start date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][2]; ?> </br></br>
+        <Strong>End date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][3]; ?> </br></br>
+        <Strong>Goals: </Strong> <?php echo $_SESSION['tabMyWorkshop'][4]; ?> </br></br>
+        <Strong>Coordinator: </Strong> <?php echo $_SESSION['tabMyWorkshop'][5]; ?> </br></br>
+        <Strong>Judges: </Strong> <?php echo $_SESSION['tabMyWorkshop'][6]; ?> </br></br>
+        <Strong>Technicians: </Strong> <?php echo $_SESSION['tabMyWorkshop'][7]; ?> </br></br>
+        <Strong>Number of groups: </Strong> <?php echo $_SESSION['tabMyWorkshop'][8]; ?>
+    </div>
+
+    <div class="group">
+        <h3>My group</h3> </br>
+        <Strong>ID: </Strong> <?php echo $_SESSION['tabMyGroup'][0]; ?> </br></br>
+        <Strong>ID workshop: </Strong> <?php echo $_SESSION['tabMyGroup'][1]; ?> </br></br>
+        <Strong>Members: </Strong> <?php echo $_SESSION['tabMyGroup'][2]; ?> </br></br>
+        <Strong>Expert: </Strong><?php echo $_SESSION['tabMyGroup'][3]; ?>
+    </div>
+</div>
+</br> </br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Attend the workshop" />
+</body>
+</html>

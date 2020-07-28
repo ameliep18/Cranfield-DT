@@ -33,7 +33,7 @@
     <?php
     $imax = sizeof($_SESSION['tabIGWorkshop']);
 
-    for ($i=0; $i<$imax; $i=$i+17) {
+    for ($i=0; $i<$imax; $i=$i+9) {
     ?>
 
     <tbody> <!-- Content of the table -->

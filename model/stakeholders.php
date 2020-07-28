@@ -87,3 +87,52 @@ function modifyPassword(PDO $bdd, $id, $newpassword) {
     $statement->bindParam(":password", $newpassword);
     $statement->execute();
 }
+
+//Function to display the workshop ID of the user knowing his ID
+function getWorkshopIdFromUserId(PDO $bdd, $id_participant) {
+
+    $statement = $bdd->prepare('SELECT id_workshop FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $id_participant);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $id_workshop = $data['id_workshop'];
+    }
+    return $id_workshop;
+}
+
+function getGroupIdFromUserId(PDO $bdd, $id_participant) {
+
+    $statement = $bdd->prepare('SELECT id_group FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $id_participant);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $id_group = $data['id_group'];
+    }
+    return $id_group;
+}
+
+//Function to split the participants' ID
+function splitParticipants(PDO $bdd, $partlist) {
+    $tab = explode(",", $partlist);
+    $size = 4;
+    //echo $size;
+    if ($size==3) {
+        $firstpart = $tab[0];
+        $secondpart = $tab[1];
+        $thirdpart = $tab[2];
+        $fourthpart = $tab[3];
+        $statement = $bdd->prepare('SELECT id_employee FROM employee WHERE email = :firstmail OR email = :secondmail OR email = :thirdmail ');
+        $statement->bindParam(":firstmail", $firstmail);
+        $statement->bindParam(":secondmail", $secondmail);
+        $statement->bindParam(":thirdmail", $thirdmail);
+    }
+    $statement->execute();
+    $id_array = array();
+    while ($data = $statement->fetch())
+    {
+        $id_array[] = $data['id_employee'];
+    }
+    $id_array[]='0';
+    $id_array[]='0';
+    return $id_array;
+}

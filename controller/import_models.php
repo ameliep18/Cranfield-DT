@@ -5,6 +5,6 @@ if (!isset($_SESSION)) {
 }
 //We include all the models
 include('../model/design_workshop.php');
-//include('../model/display_workshop.php');
+include('../model/display_workshop.php');
 include('../model/displayStakeholders.php');
-//include('../model/activity.php');
+include('../model/stakeholders.php');

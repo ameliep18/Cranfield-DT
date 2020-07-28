@@ -24,11 +24,11 @@ if (!isset($_SESSION)) {
 
 <body>
 </br></br>
-<h2>Pending workshop number <?php echo $_SESSION['id_workshop']; ?></h2>
+<h2>Pending Workshop n° <?php echo $_SESSION['id_workshop']; ?></h2>
 </br>
 <div id="conteneur">
     <div class="info">
-<?php
+<?php /*
 $imax = sizeof($_SESSION['tabOneWorkshop']);
 
 for ($i=0; $i<$imax; $i=$i+17) { ?>
@@ -52,7 +52,7 @@ else if ($_SESSION['tabOneWorkshop'][$i+8]==4) { ?>
     <strong>Fourth group's participants</strong> : <td><?php echo $_SESSION['tabOneWorkshop'][$i+15]; ?></td> </br>
     </br><strong>Fourth group's expert</strong></br> : <td><?php echo $_SESSION['tabOneWorkshop'][$i+16]; ?></td>
 <?php }
-}?>
+}*/?>
     </div>
 </div>
 </br> </br>

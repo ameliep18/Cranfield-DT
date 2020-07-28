@@ -1,0 +1,83 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2, h3{
+    text-align: center;
+}
+
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+#conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.empathize {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: #ebf2ff;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.empathize span{
+    text-align: justify;
+}
+
+.define {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: #d7e6ff;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.ideate {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: #c1d9ff;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.prototype {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: #abcdff;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.test {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: #95b7e8;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}

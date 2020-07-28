@@ -11,8 +11,8 @@ catch (Exception $e)
 }
 
 //Function to create a coaching in the database
-function createWorkshop (PDO $bdd, $title, $start_date, $end_date, $goals, $id_coordinator, $id_judges, $id_technicians, $nb_groups, $g1participants, $g1expert, $g2participants, $g2expert, $g3participants, $g3expert, $g4participants, $g4expert, $status) {
-    $statement = $bdd->prepare('INSERT INTO workshop(id_workshop, title, start_date, end_date, goals, id_coordinator, id_judges, id_technicians, nb_groups, g1participants, g1expert, g2participants, g2expert, g3participants, g3expert, g4participants, g4expert, status)
+function createWorkshop (PDO $bdd, $title, $start_date, $end_date, $goals, $id_coordinator, $id_judges, $id_technicians, $nb_groups, $status) {
+    $statement = $bdd->prepare('INSERT INTO workshop(id_workshop, title, start_date, end_date, goals, id_coordinator, id_judges, id_technicians, nb_groups, status)
 VALUES(
 NULL,
 :title, 
@@ -23,14 +23,6 @@ NULL,
 :id_judges,
 :id_technicians,
 :nb_groups,
-:g1participants, 
-:g1expert, 
-:g2participants, 
-:g2expert, 
-:g3participants,
-:g3expert,
-:g4participants,
-:g4expert,
 :status)');
     $statement->bindParam(":title", $title);
     $statement->bindParam(":start_date", $start_date);
@@ -40,18 +32,31 @@ NULL,
     $statement->bindParam(":id_judges", $id_judges);
     $statement->bindParam(":id_technicians", $id_technicians);
     $statement->bindParam(":nb_groups", $nb_groups);
-    $statement->bindParam(":g1participants", $g1participants);
-    $statement->bindParam(":g1expert", $g1expert);
-    $statement->bindParam(":g2participants", $g2participants);
-    $statement->bindParam(":g2expert", $g2expert);
-    $statement->bindParam(":g3participants", $g3participants);
-    $statement->bindParam(":g3expert", $g3expert);
-    $statement->bindParam(":g4participants", $g4participants);
-    $statement->bindParam(":g4expert", $g4expert);
     $statement->bindParam(":status", $status);
     $statement->execute();
 }
 
+function createGroup($bdd, $id_workshop, $id_participants, $id_expert) {
+    $statement = $bdd->prepare('INSERT INTO workshop_group(id_group, id_workshop, id_participants, id_expert)
+VALUES(
+NULL,
+:id_workshop, 
+:id_participants,
+:id_expert)');
+    $statement->bindParam(":id_workshop", $id_workshop);
+    $statement->bindParam(":id_participants", $id_participants);
+    $statement->bindParam(":id_expert", $id_expert);
+    $statement->execute();
+}
 
+/*function updateWorkshopGroupId ($bdd, $id_workshop, $id_g1, $id_g2, $id_g3, $id_g4) {
+    $statement = $bdd->prepare('UPDATE workshop SET id_g1=:id_g1, id_g2=:id_g2, id_g3=:id_g3, id_g4=:id_g4  WHERE id_workshop=:id_workshop');
+    $statement->bindParam(":id_workshop", $id_workshop);
+    $statement->bindParam(":id_g1", $id_g1);
+    $statement->bindParam(":id_g2", $id_g2);
+    $statement->bindParam(":id_g3", $id_g3);
+    $statement->bindParam(":id_g4", $id_g4);
+    $statement->execute();
+}*/
 
 

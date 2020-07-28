@@ -11,10 +11,10 @@ if (!isset($_SESSION)) {
 $id = $_GET['id'];
 $_SESSION['id_workshop'] = $id;
 //Display the list of workshops
-$tab = displayOneWorkshop($bdd, $id, 0);
+//$tab = displayOneWorkshop($bdd, $id, 0);
 
 //Add the list of workshops in a session variable
-$_SESSION['tabOneWorkshop'] = $tab;
+//$_SESSION['tabOneWorkshop'] = $tab;
 
 //Display the view
 header('location: ../view/co_viewpendingworkshop.php');

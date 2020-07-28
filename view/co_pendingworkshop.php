@@ -33,23 +33,8 @@
     <?php
     $imax = sizeof($_SESSION['tabWorkshop']);
 
-    for ($i=0; $i<$imax; $i=$i+17) {
-        /*if ($_SESSION['tabWorkshop'][$i+8]==1) {
-            //we stay like this
-        }
-        else if ($_SESSION['tabWorkshop'][$i+8]==2) { ?>
-            <th>Second group's participants</th> <th>Second group's expert</th>
-        <?php }
-        else if ($_SESSION['tabWorkshop'][$i+8]==3) { ?>
-            <th>Second group's participants</th> <th>Second group's expert</th>
-            <th>Third group's participants</th> <th>Third group's expert</th>
-        <?php }
-        else if ($_SESSION['tabWorkshop'][$i+8]==4) { ?>
-            <th>Second group's participants</th> <th>Second group's expert</th>
-            <th>Third group's participants</th> <th>Third group's expert</th>
-            <th>Fourth group's participants</th> <th>Fourth group's expert</th>
-    </thead>
-        <?php }*/?>
+    for ($i=0; $i<$imax; $i=$i+9) {
+        ?>
 
     <tbody> <!-- Content of the table -->
         <tr>
@@ -62,41 +47,6 @@
             <td><?php echo $_SESSION['tabWorkshop'][$i+6]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+7]; ?></td>
             <td><?php echo $_SESSION['tabWorkshop'][$i+8]; ?></td>
-            <?php /*
-            if ($_SESSION['tabWorkshop'][$i+8]==1) { ?>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-            <?php }
-            if ($_SESSION['tabWorkshop'][$i+8]==2) { ?>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+11]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+12]; ?> </td>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-                <td> – </td>
-                <?php
-            }
-            if ($_SESSION['tabWorkshop'][$i+8]==3) {?>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+11]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+12]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+13]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+14]; ?> </td>
-                <td> – </td>
-                <td> – </td>
-            <?php }
-            if ($_SESSION['tabWorkshop'][$i+8]==4) {?>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+11]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+12]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+13]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+14]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+15]; ?> </td>
-                <td> <?php echo $_SESSION['tabWorkshop'][$i+16]; ?> </td>
-            <?php } */?>
-
 
     <td class="button">
         <input type="button" onclick=window.location.href="../controller/co_viewpendingworkshop?id=<?php echo $id?>" value="View/Edit" />
