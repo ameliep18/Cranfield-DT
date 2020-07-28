@@ -138,27 +138,19 @@
         <tr>
             <td>Judges</td>
             <td>
-                <select name="judges" class="fields" required>
-                    <?php
-                    $imax = sizeof($_SESSION['tabJudges']);
-                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
-                        <option VALUE="<?php echo $_SESSION['tabJudges'][$i];?>">
-                            <?php echo $_SESSION['tabJudges'][$i+1];?></option>
-                    <?php } ?>
-                </select>
+                <input type="checkbox" id="judge1" name="judge" value="<?php echo $_SESSION['tabJudges'][0];?>">
+                <label for="judge1"><?php echo $_SESSION['tabJudges'][1];?></label>
+                <input type="checkbox" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][3];?>">
+                <label for="judge2"><?php echo $_SESSION['tabJudges'][4];?></label>
             </td>
         </tr>
         <tr>
             <td>Technicians</td>
             <td>
-                <select name="technicians" class="fields" required>
-                    <?php
-                    $imax = sizeof($_SESSION['tabTech']);
-                    for ($i=0; $i<$imax; $i=$i+3 ) { ?>
-                        <option VALUE="<?php echo $_SESSION['tabTech'][$i];?>">
-                            <?php echo $_SESSION['tabTech'][$i+1];?></option>
-                    <?php } ?>
-                </select>
+                <input type="checkbox" id="tech1" name="tech" value="<?php echo $_SESSION['tabTech'][0];?>">
+                <label for="tech1"><?php echo $_SESSION['tabTech'][1];?></label>
+                <input type="checkbox" id="tech2" name="tech" value="<?php echo $_SESSION['tabTech'][3];?>">
+                <label for="tech2"><?php echo $_SESSION['tabTech'][4];?></label>
             </td>
         </tr>
         <tr>
@@ -245,5 +237,10 @@
 </form>
 
 </body>
-
+<?php /*
+$imax = sizeof($_SESSION['tabTech']);
+for ($i=0; $i<$imax; $i=$i+3 ) { ?>
+    <option VALUE="<?php echo $_SESSION['tabTech'][$i];?>">
+        <?php echo $_SESSION['tabTech'][$i+1];?></option>
+<?php } */?>
 </html>
