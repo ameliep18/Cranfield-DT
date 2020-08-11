@@ -19,18 +19,19 @@ if (!isset($_SESSION)) {
         include('menu_coordinator.php');
     }?>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/viewpendingwokshop.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pa_viewigworkshop.css"/>
 </head>
 
 <body>
+
 </br></br>
 <h2>My Design Thinking Workshop : </br> <?php echo $_SESSION['tabMyWorkshop'][1]; ?></h2>
-</br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Attend the workshop" />
+</br> </br>
 <div id="conteneur">
     <div class="workshop">
         <h3>Workshop's information</h3> </br>
-        <Strong>Start date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][2]; ?> </br></br>
-        <Strong>End date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][3]; ?> </br></br>
+        <Strong>Start date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][2]; ?> <Strong>  End date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][3]; ?> </br></br>
         <Strong>Goals: </Strong> <?php echo $_SESSION['tabMyWorkshop'][4]; ?> </br></br>
         <Strong>Coordinator: </Strong> <?php echo $_SESSION['tabMyWorkshop'][5]; ?> </br></br>
         <Strong>Judges: </Strong> <?php echo $_SESSION['tabMyWorkshop'][6]; ?> </br></br>
@@ -40,13 +41,10 @@ if (!isset($_SESSION)) {
 
     <div class="group">
         <h3>My group</h3> </br>
-        <Strong>ID: </Strong> <?php echo $_SESSION['tabMyGroup'][0]; ?> </br></br>
-        <Strong>ID workshop: </Strong> <?php echo $_SESSION['tabMyGroup'][1]; ?> </br></br>
-        <Strong>Members: </Strong> <?php echo $_SESSION['tabMyGroup'][2]; ?> </br></br>
+        <Strong>Members: </Strong> <?php echo $_SESSION['tabMyGroup'][2][0]; ?>, </br><?php echo $_SESSION['tabMyGroup'][2][1]; ?>, </br> <?php echo $_SESSION['tabMyGroup'][2][2]; ?>, </br> <?php echo $_SESSION['tabMyGroup'][2][3]; ?>.</br></br>
         <Strong>Expert: </Strong><?php echo $_SESSION['tabMyGroup'][3]; ?>
     </div>
 </div>
-</br> </br>
-<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Attend the workshop" />
+
 </body>
 </html>

@@ -64,12 +64,12 @@ function getIdFromEmail(PDO $bdd, $listemail) {
     $id_array[]='0';
     $id_array[]='0';
     return $id_array;
-}
+}*/
 
 //Function to display the name of the user knowing his ID
 function getNameFromId(PDO $bdd, $id) {
     $name_array = array();
-    $statement = $bdd->prepare('SELECT firstname, surname FROM employee WHERE id_employee=:id');
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
     $statement->bindParam(":id", $id);
     $statement->execute();
     //$statement->fetchAll();
@@ -79,7 +79,65 @@ function getNameFromId(PDO $bdd, $id) {
     }
     $fullname = implode(" ", $name_array);
 return $fullname;
-}*/
+}
+function getNamesFromId(PDO $bdd, $charId) {
+    $name_array1 = array();
+    $name_array2 = array();
+    $name_array3 = array();
+    $name_array4 = array();
+    $tabId = explode(",", $charId);
+    $firstId = $tabId[0];
+    $secondId = $tabId[1];
+    $thirdId = $tabId[2];
+    $fourthId = $tabId[3];
+
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $firstId);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array1[] = $data['firstname'];
+        $name_array1[] = $data['surname'];
+    }
+    $fullname1 = implode(" ", $name_array1);
+
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $secondId);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array2[] = $data['firstname'];
+        $name_array2[] = $data['surname'];
+    }
+    $fullname2 = implode(" ", $name_array2);
+
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $thirdId);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array3[] = $data['firstname'];
+        $name_array3[] = $data['surname'];
+    }
+    $fullname3 = implode(" ", $name_array3);
+
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $fourthId);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array4[] = $data['firstname'];
+        $name_array4[] = $data['surname'];
+    }
+    $fullname4 = implode(" ", $name_array4);
+
+    $tabfullname[] = $fullname1;
+    $tabfullname[] = $fullname2;
+    $tabfullname[] = $fullname3;
+    $tabfullname[] = $fullname4;
+
+    return $tabfullname;
+}
 
 function modifyPassword(PDO $bdd, $id, $newpassword) {
     $statement = $bdd->prepare('UPDATE stakeholders SET password=:password WHERE id_stakeholder=:id');

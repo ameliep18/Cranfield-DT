@@ -1,0 +1,56 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2, h3{
+    text-align: center;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+#conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.workshop {
+    width: 350px;
+    border: 0.05mm solid black;
+    background-color: white;
+    text-align: justify;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.group {
+    width: 250px;
+    height: 185px;
+    border: 0.05mm solid black;
+    background-color: white;
+    text-align: justify;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
