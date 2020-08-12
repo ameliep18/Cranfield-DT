@@ -68,7 +68,7 @@ function displayMyRequestedCoachings(PDO $bdd, $id, $status) {
 
 //Function to display all my IG workshop
 function displayMyWorkshops(PDO $bdd, $id, $status) {
-    $statement = $bdd->prepare('SELECT * FROM workshop WHERE status=:status AND id_judges=:id');
+    $statement = $bdd->prepare('SELECT * FROM workshop WHERE status=:status AND (id_judges=:id OR id_technicians=:id)');
     $statement->bindParam(":id", $id);
     $statement->bindParam(":status", $status);
     $statement->execute();

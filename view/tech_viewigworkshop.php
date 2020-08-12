@@ -8,7 +8,7 @@ if (!isset($_SESSION)) {
 
 <head>
     <div class="header"><img src="img\header.png"></div>
-    <?php include('menu_judge.php');?>
+    <?php include('menu_technician.php');?>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/co_ingoingworkshop.css"/>
 </head>
@@ -27,7 +27,7 @@ if (!isset($_SESSION)) {
         <th>End Date</th>
         <th>Goals</th>
         <th>Coordinator</th>
-        <th>Technicians</th>
+        <th>Judges</th>
         <th>Number of group(s)</th>
     </tr>
     <?php
@@ -44,10 +44,10 @@ if (!isset($_SESSION)) {
         <td><?php echo $_SESSION['tabWorkshops'][$i+3]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+4]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+5]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+7]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshops'][$i+6]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+8]; ?></td>
         <td class="button">
-            <input type="button" onclick=window.location.href="../controller/ju_viewtheworkshop?id=<?php echo $id?>" value="View" />
+            <input type="button" onclick=window.location.href="../controller/tech_viewtheworkshop?id=<?php echo $id?>" value="Help prototyping" />
         </td>
     </tr>
     <?php } ?>
@@ -57,4 +57,3 @@ if (!isset($_SESSION)) {
 
 </body>
 </html>
-

@@ -9,6 +9,12 @@ if (!isset($_SESSION)) {
 <head>
     <div class="header"><img src="img\header.png"></div>
     <?php
+    if ($_SESSION['status']==4) {
+        include('menu_technician.php');
+    }
+    if ($_SESSION['status']==3) {
+        include('menu_expert.php');
+    }
     if ($_SESSION['status']==2) {
         include('menu_judge.php');
     }
