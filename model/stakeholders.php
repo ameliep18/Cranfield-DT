@@ -80,16 +80,33 @@ function getNameFromId(PDO $bdd, $id) {
     $fullname = implode(" ", $name_array);
 return $fullname;
 }
+
+function getFirstnameFromId(PDO $bdd, $id) {
+    $name_array = array();
+    $statement = $bdd->prepare('SELECT surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $id);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array[] = $data['surname'];
+    }
+    $firstname = $name_array[0];
+    return $firstname;
+}
+
+
 function getNamesFromId(PDO $bdd, $charId) {
     $name_array1 = array();
     $name_array2 = array();
     $name_array3 = array();
     $name_array4 = array();
+    $name_array5 = array();
     $tabId = explode(",", $charId);
     $firstId = $tabId[0];
     $secondId = $tabId[1];
     $thirdId = $tabId[2];
     $fourthId = $tabId[3];
+    $fifthId = $tabId[4];
 
     $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
     $statement->bindParam(":id", $firstId);
@@ -131,10 +148,22 @@ function getNamesFromId(PDO $bdd, $charId) {
     }
     $fullname4 = implode(" ", $name_array4);
 
+    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $fifthId);
+    $statement->execute();
+    //$statement->fetchAll();
+    while ($data = $statement->fetch()) {
+        $name_array5[] = $data['firstname'];
+        $name_array5[] = $data['surname'];
+    }
+    $fullname5 = implode(" ", $name_array5);
+
     $tabfullname[] = $fullname1;
     $tabfullname[] = $fullname2;
     $tabfullname[] = $fullname3;
     $tabfullname[] = $fullname4;
+    $tabfullname[] = $fullname5;
+
 
     return $tabfullname;
 }

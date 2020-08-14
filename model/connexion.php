@@ -10,7 +10,7 @@ catch (Exception $e) {
 
 try
 {
-    $bdd = new PDO('mysql:host=localhost:3306;dbname=cranfield_olc;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost:3306;dbname=cranfield_old_dt;charset=utf8', 'root', '');
 }
 catch (Exception $e)
 {

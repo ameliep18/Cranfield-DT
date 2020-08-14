@@ -142,6 +142,8 @@
                 <label for="judge1"><?php echo $_SESSION['tabJudges'][2];?></label>
                 <input type="checkbox" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][3];?>">
                 <label for="judge2"><?php echo $_SESSION['tabJudges'][5];?></label>
+                <input type="checkbox" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][6];?>">
+                <label for="judge2"><?php echo $_SESSION['tabJudges'][8];?></label>
             </td>
         </tr>
         <tr>
@@ -193,7 +195,7 @@
                     $imax = sizeof($_SESSION['tabExperts']);
                     for ($i=0; $i<$imax; $i=$i+3 ) { ?>
                         <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
-                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                            <?php echo $_SESSION['tabExperts'][$i+2];?></option>
                     <?php } ?>
                 </select>
             </td>
@@ -210,7 +212,7 @@
                     $imax = sizeof($_SESSION['tabExperts']);
                     for ($i=0; $i<$imax; $i=$i+3 ) { ?>
                         <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
-                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                            <?php echo $_SESSION['tabExperts'][$i+2];?></option>
                     <?php } ?>
                 </select>
             </td>
@@ -227,7 +229,7 @@
                     $imax = sizeof($_SESSION['tabExperts']);
                     for ($i=0; $i<$imax; $i=$i+3 ) { ?>
                         <option VALUE="<?php echo $_SESSION['tabExperts'][$i];?>">
-                            <?php echo $_SESSION['tabExperts'][$i+1];?></option>
+                            <?php echo $_SESSION['tabExperts'][$i+2];?></option>
                     <?php } ?>
                 </select>
             </td>

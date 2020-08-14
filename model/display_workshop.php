@@ -104,9 +104,9 @@ function displayMyWorkshop(PDO $bdd, $id_workshop) {
         $tab[] = $data['start_date'];
         $tab[] = $data['end_date'];
         $tab[] = $data['goals'];
-        $tab[] = getNameFromId($bdd, $data['id_coordinator']);
-        $tab[] = getNameFromId($bdd, $data['id_judges']);
-        $tab[] = getNameFromId($bdd, $data['id_technicians']);
+        $tab[] = getFirstnameFromId($bdd, $data['id_coordinator']);
+        $tab[] = getFirstnameFromId($bdd, $data['id_judges']);
+        $tab[] = getFirstnameFromId($bdd, $data['id_technicians']);
         $tab[] = $data['nb_groups'];
     }
     return $tab;
@@ -122,7 +122,7 @@ function displayMyGroup(PDO $bdd, $id_group) {
         echo $tab[] = $data['id_group'];
         echo $tab[] = $data['id_workshop'];
         echo $tab[] = getNamesFromId($bdd, $data['id_participants']);
-        echo $tab[] = getNameFromId($bdd, $data['id_expert']);
+        echo $tab[] = getFirstnameFromId($bdd, $data['id_expert']);
     }
     return $tab;
 }
