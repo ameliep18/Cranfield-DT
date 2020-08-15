@@ -64,7 +64,7 @@ $(document).ready(function(){
         };
 
         /* Sending an AJAX POST request: */
-        $.post('ajax/post.php',data,function(msg){
+        $.post('../controller/pa_ideate_post.php',data,function(msg){
 
             if(parseInt(msg))
             {
@@ -95,7 +95,7 @@ function make_draggable(elements)
         stop:function(e,ui){
 
             /* Sending the z-index and positon of the note to update_position.php via AJAX GET: */
-            $.get('ajax/update_position.php',{
+            $.get('update_position.php',{
                 x       : ui.position.left,
                 y       : ui.position.top,
                 z       : zIndex,

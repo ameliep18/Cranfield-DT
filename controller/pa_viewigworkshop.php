@@ -9,8 +9,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 $id_participant = $_SESSION['id'];
-echo $id_workshop = getWorkshopIdFromUserId($bdd, $id_participant);
-echo $id_group = getGroupIdFromUserId($bdd, $id_participant);
+$id_workshop = getWorkshopIdFromUserId($bdd, $id_participant);
+$id_group = getGroupIdFromUserId($bdd, $id_participant);
 
 $tabMyWorkshop = displayMyWorkshop($bdd, $id_workshop);
 $tabMyGroup = displayMyGroup($bdd, $id_group);

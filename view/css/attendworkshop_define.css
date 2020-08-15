@@ -1,0 +1,9 @@
+.define {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: darkseagreen;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}

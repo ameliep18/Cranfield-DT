@@ -17,7 +17,7 @@ if (!isset($_SESSION)) {
 
 <body>
 <div id="noteData"> <!-- Holds the form -->
-    <form action="pa_ideate_post.php" method="post" class="note-form">
+    <form action="../controller/pa_ideate_post.php" method="post" class="note-form">
 
         <label for="note-body">Text of the note</label>
         <textarea name="note-body" id="note-body" class="pr-body" cols="30" rows="6"></textarea>
@@ -37,5 +37,6 @@ if (!isset($_SESSION)) {
 
     </form>
 </div>
+<input type="button" class="button" onclick=window.location.href="pa_ideate_demo.php" value="Go back" />
 </body>
 

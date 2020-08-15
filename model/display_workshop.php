@@ -311,3 +311,30 @@ function getTitleFromId(PDO $bdd, $id_workshop) {
     }
     return $title;
 }
+
+function setActivityStatus(PDO $bdd, $id_activity, $newstatus){
+    $statement = $bdd->prepare('UPDATE workshop_activity SET status=:newstatus WHERE id_activity=:id');
+    $statement->bindParam(":id", $id_activity);
+    $statement->bindParam(":newstatus", $newstatus);
+    $statement->execute();
+    /*while ($data = $statement->fetch()) {
+        $status = $data['status'];
+    }
+    return $status;*/
+}
+
+function displayWorkshopActivities(PDO $bdd, $id_workshop){
+    $statement = $bdd->prepare('SELECT * FROM workshop_activity WHERE id_workshop=:id');
+    $statement->bindParam(":id", $id_workshop);
+    $statement->execute();
+    $tab=array();
+    while ($data = $statement->fetch()) {
+        $tab[] = $data['id_activity'];
+        $tab[] = $data['title'];
+        $tab[] = $data['duration'];
+        $tab[] = $data['com_method'];
+        $tab[] = $data['aim'];
+        $tab[] = $data['status'];
+    }
+    return $tab;
+}

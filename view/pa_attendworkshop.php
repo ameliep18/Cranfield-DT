@@ -23,7 +23,77 @@ if (!isset($_SESSION)) {
 
 </br>
 <div id="conteneur">
-    <div class="empathize">
+    <?php
+    $imax = sizeof($_SESSION['tabActivities']);
+    $j=1;
+    for ($i=0; $i<$imax; $i=$i+6 ) {
+        $id = $_SESSION['tabActivities'][$i];?>
+        <div class="<?php echo strtolower($_SESSION['tabActivities'][$i+1]);?>">
+        <h2><?php echo $j;?>. <?php echo $_SESSION['tabActivities'][$i+1];?></h2>
+        <span> <Strong>Duration: </Strong> <?php echo $_SESSION['tabActivities'][$i+2];?></span> </br></br>
+        <span> <Strong>Delivery method: </Strong> <?php echo $_SESSION['tabActivities'][$i+3];?></span> </br></br>
+        <span> <Strong>Aim: </Strong><?php echo $_SESSION['tabActivities'][$i+4];?> </span> </br></br>
+            <?php
+            if ($_SESSION['tabActivities'][$i+1]=='Empathize') {
+                if ($_SESSION['tabActivities'][$i+5] == 0) {
+                    ?>
+                    <input type="button" class="button"
+                           onclick=window.location.href="pa_empathize_demo?id=<?php echo $id ?>" value="Start"/>
+                <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
+                    <link rel="stylesheet" type="text/css" href="css/attendworkshop_empathize.css"/>
+                    <Strong>Completed ! </Strong>
+                    <input type="button" class="button" onclick=window.location.href="pa_empathize_view" value="View output"/>
+                <?php }
+            }
+            else if ($_SESSION['tabActivities'][$i+1]=='Define') {
+                if ($_SESSION['tabActivities'][$i+5] == 0) {
+                    ?>
+                    <input type="button" class="button"
+                           onclick=window.location.href="pa_define_demo?id=<?php echo $id ?>" value="Start"/>
+                <?php } else if ($_SESSION['tabActivities'][$i + 5] == 1) { ?>
+                    <link rel="stylesheet" type="text/css" href="css/attendworkshop_define.css"/>
+                    <Strong>Completed ! </Strong>
+                    <input type="button" class="button" onclick=window.location.href="pa_define_view" value="View output"/>
+                <?php }
+            }
+            else if ($_SESSION['tabActivities'][$i+1]=='Ideate') {
+                if ($_SESSION['tabActivities'][$i+5] == 0) {
+                    ?>
+                    <input type="button" class="button"
+                           onclick=window.location.href="pa_ideate_demo?id=<?php echo $id ?>" value="Start"/>
+                <?php } else if ($_SESSION['tabActivities'][$i + 5] == 1) { ?>
+                    <link rel="stylesheet" type="text/css" href="css/attendworkshop_ideate.css"/>
+                    <Strong>Completed ! </Strong>
+                    <input type="button" class="button" onclick=window.location.href="pa_ideate_view" value="View output"/>
+                <?php }
+            }
+            else if($_SESSION['tabActivities'][$i+1]=='Prototype') {
+                if ($_SESSION['tabActivities'][$i+5] == 0) {
+                    ?>
+                    <input type="button" class="button"
+                           onclick=window.location.href="pa_prototype?id=<?php echo $id ?>" value="Start"/>
+                <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
+                    <link rel="stylesheet" type="text/css" href="css/attendworkshop_prototype.css"/>
+                    <Strong>Completed ! </Strong>
+                    <input type="button" class="button" onclick=window.location.href="pa_prototype_view" value="View output"/>
+                <?php }
+            }
+            else if($_SESSION['tabActivities'][$i+1]=='Test') {
+                if ($_SESSION['tabActivities'][$i+5] == 0) {
+                    ?>
+                    <input type="button" class="button"
+                           onclick=window.location.href="pa_test?id=<?php echo $id ?>" value="Start"/>
+                <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
+                    <link rel="stylesheet" type="text/css" href="css/attendworkshop_test.css"/>
+                    <Strong>Completed ! </Strong>
+                    <input type="button" class="button" onclick=window.location.href="pa_test_view" value="View output"/>
+                <?php }
+            }
+            $j++ ?>
+    </div>
+    <?php
+    }?>
+    <!---<div class="empathize">
         <h2>1. EMPATHIZE</h2>
         <span> <Strong>Duration: </Strong> 1h00</span> </br></br>
         <span> <Strong>Delivery method: </Strong> Empathy map</span> </br></br>
@@ -57,9 +127,10 @@ if (!isset($_SESSION)) {
         <span> <Strong>Delivery method: </Strong> Microsoft Teams meeting</span> </br></br>
         <span> <Strong>Aim: </Strong> Obtaining feedback from users. Opportunity to deepen understanding of users and their needs.</span> </br></br>
         <input type="button" class="button" onclick=window.location.href="" value="Start" />
-    </div>
+    </div>-->
 </div>
 </br> </br>
 <input type="button" class="button" onclick=window.location.href="../controller/pa_viewigworkshop.php" value="Go back" />
 </body>
 </html>
+<?php ?>

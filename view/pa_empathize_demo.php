@@ -27,11 +27,10 @@ if (!isset($_SESSION)) {
 
 
 <?php
-if (!isset($_SESSION['id_activity3'])){
+if (!isset($_SESSION['id_activity1'])){
     echo $id_activity = $_GET['id'];
-    $_SESSION['id_activity3']=$id_activity;
+    $_SESSION['id_activity1']=$id_activity;
 }
-
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname=cranfield_old_dt;charset=utf8', 'root', '');
@@ -58,8 +57,10 @@ while($row= $query->fetch())
     </div>';
 } ?>
 </br> </br>
-<input type="button" id="addButton" class="green-button" onclick=window.location.href="add_note.php" value="Add a note" /></br> </br>
+<input type="button" id="addButton" class="green-button" onclick=window.location.href="add_note.php?id="<?php
+echo $id_activity?> value="Add a note" /></br> </br>
 <div id="main">
+    <div class="map"><img src="img\empathizemap.png"></div>
     <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
     <?php echo $notes?>
 </div>
