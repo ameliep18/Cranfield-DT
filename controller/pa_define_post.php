@@ -7,15 +7,15 @@ if (!isset($_SESSION)) {
 
 include('../model/post_note.php');
 
-$id_activity = $_SESSION['id_activity3'];
+$id_activity = $_SESSION['id_activity2'];
 $id_participant = $_SESSION['id'];
 $author = $_POST['note-name'];
 $body = $_POST['note-body'];
-$color = $_POST['color'];
+$color = 'white';
 $xindex = random_int(50, 900);
 $yindex = random_int(10, 50);
 $zindex = (int)$_POST['zindex'];
 
 postNote($bdd, $id_activity, $id_participant, $author, $body, $color, $xindex, $yindex, $zindex);
 
-header('location: ../view/pa_ideate_demo.php');
+header('location: ../view/pa_define_demo.php');

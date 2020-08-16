@@ -28,7 +28,7 @@ if (!isset($_SESSION)) {
 
 <?php
 if (!isset($_SESSION['id_activity3'])){
-    echo $id_activity = $_GET['id'];
+    $id_activity=$_GET['id'];
     $_SESSION['id_activity3']=$id_activity;
 }
 
@@ -40,7 +40,9 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-$query = $bdd->prepare("SELECT * FROM notes ORDER BY id_note DESC");
+$id_activity=$_SESSION['id_activity3'];
+$query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
+$query->bindParam(":id_activity", $id_activity);
 $query->execute();
 $notes = '';
 $left='';
@@ -58,7 +60,7 @@ while($row= $query->fetch())
     </div>';
 } ?>
 </br> </br>
-<input type="button" id="addButton" class="green-button" onclick=window.location.href="add_note.php" value="Add a note" /></br> </br>
+<input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_ideate_add_note.php" value="Add a note" /></br> </br>
 <div id="main">
     <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
     <?php echo $notes?>

@@ -30,7 +30,7 @@ $jour  = date("d");  // par defaut aujourd'hui
 
 // quand le compteur arrive à 0
 // -> redirection
-$redirection = '../controller/pa_completeactivity?id=1';
+$redirection = '../controller/pa_completeactivity?id=2';
 
 /*******************************************************************************
  * calcul des secondes
@@ -85,4 +85,3 @@ if ($secondes <= 3600*24) {
 ?>
 </body>
 </html>
-

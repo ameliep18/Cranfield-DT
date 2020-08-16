@@ -6,19 +6,15 @@ try {
 }
 
 // Escaping the input data:
-$id_activity = $_SESSION['id_activity3'];
-$id_participant = $_SESSION['id'];
-$author = $_POST['note-name'];
-$body = $_POST['note-body'];
-$color = $_POST['color'];
-$xindex = random_int(50, 900);
-$yindex = random_int(10, 50);
-$zindex = (int)$_POST['zindex'];
+
 
 /* Inserting a new record in the notes DB: */
-$statement = $bdd->prepare('   INSERT INTO notes (id_activity, id_participant, text,name,color,xyz)
+function postNote(PDO $bdd, $id_activity, $id_participant, $author, $body, $color, $xindex, $yindex, $zindex) {
+    $statement = $bdd->prepare('   INSERT INTO notes (id_activity, id_participant, text, name, color, xyz)
 VALUES ("' . $id_activity . '","' . $id_participant . '","' . $body . '","' . $author . '","' . $color . '","' . $xindex . 'x' . $yindex . 'x' . $zindex . '")');
-$statement->execute();
+    $statement->execute();
+}
+
 
 /*if(mysql_affected_rows($link)==1)
 {

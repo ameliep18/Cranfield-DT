@@ -8,7 +8,6 @@ include('../model/stakeholders.php');
 if (!isset($_SESSION)) {
     session_start();
 }
-$id_participant = $_SESSION['id'];
 $id_activity = $_GET['id'];
 
 setActivityStatus($bdd, $id_activity, 1);

@@ -10,10 +10,10 @@ if (!isset($_SESSION)) {
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
     </br> </br>
-    <?php include('pa_empathize_countdown.php');?>
+    <?php include('pa_define_countdown.php');?>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="css/pa_empathize.css" />
+    <link rel="stylesheet" type="text/css" href="css/pa_define.css" />
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.2.6.css" media="screen" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
@@ -27,9 +27,9 @@ if (!isset($_SESSION)) {
 
 
 <?php
-if (!isset($_SESSION['id_activity1'])){
+if (!isset($_SESSION['id_activity2'])){
     $id_activity=$_GET['id'];
-    $_SESSION['id_activity1']=$id_activity;
+    $_SESSION['id_activity2']=$id_activity;
 }
 try
 {
@@ -39,7 +39,7 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-$id_activity=$_SESSION['id_activity1'];
+$id_activity=$_SESSION['id_activity2'];
 $query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
 $query->bindParam(":id_activity", $id_activity);
 $query->execute();
@@ -59,21 +59,9 @@ while($row= $query->fetch())
     </div>';
 } ?>
 </br> </br>
-<input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_empathize_add_note.php" value="Add a note" /></br> </br>
+<input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_define_add_note.php" value="Add a note" /></br> </br>
 <div id="main">
-    <div class="map"><img src="img\empathizemap.png"></div>
-    <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
+    <div class="map"><img src="img\persona.png"></div>
     <?php echo $notes?>
 </div>
-
-<!--<h3 class="popupTitle">Add a new note</h3>
-
- The preview:
-<div id="previewNote" class="note yellow" style="left:0;top:65px;z-index:1">
-    <div class="body"></div>
-    <div class="author"></div>
-    <span class="data"></span>
-</div>-->
-
-
 </body>

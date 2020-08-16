@@ -9,11 +9,9 @@ if (!isset($_SESSION)) {
 <head>
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
-    </br> </br>
-    <?php include('pa_empathize_countdown.php');?>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="css/pa_empathize.css" />
+    <link rel="stylesheet" type="text/css" href="css/pa_ideate.css" />
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.2.6.css" media="screen" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
@@ -24,11 +22,12 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-
+</br></br>
+<input type="button" class="button" onclick=window.location.href="pa_attendworkshop.php" value="Go back" />
 
 <?php
 if (!isset($_SESSION['id_activity1'])){
-    $id_activity=$_GET['id'];
+    echo $id_activity = $_GET['id'];
     $_SESSION['id_activity1']=$id_activity;
 }
 try
@@ -59,10 +58,8 @@ while($row= $query->fetch())
     </div>';
 } ?>
 </br> </br>
-<input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_empathize_add_note.php" value="Add a note" /></br> </br>
 <div id="main">
     <div class="map"><img src="img\empathizemap.png"></div>
-    <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
     <?php echo $notes?>
 </div>
 
@@ -77,3 +74,4 @@ while($row= $query->fetch())
 
 
 </body>
+
