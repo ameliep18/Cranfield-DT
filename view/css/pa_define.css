@@ -23,14 +23,14 @@ h2, h3{
 }
 
 .note{
-    height:50px;
+    height:20px;
     padding:10px;
-    width:500px;
+    width:350px;
     position:absolute;
     overflow:auto;
     cursor:move;
     font-family:Arial;
-    font-size:12px;
+    font-size:16px;
 
     /* Adding a CSS3 shadow below the note, in the browsers which support it: */
     -moz-box-shadow:2px 2px 0 #DDDDDD;
@@ -43,6 +43,13 @@ h2, h3{
 .white{
     background-color:white;
     border:1px solid lightgray;
+}
+
+.persona img {
+    display: block;
+    margin: 0 auto;
+    height: 600px;
+    width: 690px;
 }
 
 /* Each note has a data span, which holds its ID */
@@ -83,7 +90,7 @@ a.green-button,a.green-button:visited{
 #main{
     /* Contains all the notes and limits their movement: */
     margin:0 auto;
-    position:relative;
+    position: center;
     width:1000px;
     height:700px;
     z-index:10;

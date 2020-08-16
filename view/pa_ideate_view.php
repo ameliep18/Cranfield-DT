@@ -23,6 +23,8 @@ if (!isset($_SESSION)) {
 
 <body>
 </br></br>
+<h2>3. Ideate: Sticky notes ideation board</h2>
+</br></br>
 <input type="button" class="button" onclick=window.location.href="pa_attendworkshop.php" value="Go back" />
 
 <?php
@@ -34,7 +36,9 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-$query = $bdd->prepare("SELECT * FROM notes ORDER BY id_note DESC");
+$id_activity=3;
+$query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
+$query->bindParam(":id_activity", $id_activity);
 $query->execute();
 $notes = '';
 $left='';
@@ -53,7 +57,7 @@ while($row= $query->fetch())
 } ?>
 </br> </br>
 <div id="main">
-    <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
+    <div class="board"><img src="img\board.png"></div>
     <?php echo $notes?>
 </div>
 

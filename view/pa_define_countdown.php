@@ -21,8 +21,8 @@ if (!isset($_SESSION)) {
  ***************************************************************************/
 
 $heures   = 0;  // les heures < 24
-$minutes  = 0;   // les minutes  < 60
-$secondes = 30;  // les secondes  < 60
+$minutes  = 3;   // les minutes  < 60
+$secondes = 00;  // les secondes  < 60
 
 $annee = date("Y");  // par defaut cette année
 $mois  = date("m");  // par defaut ce mois

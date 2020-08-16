@@ -42,7 +42,7 @@ if (!isset($_SESSION)) {
                 <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
                     <link rel="stylesheet" type="text/css" href="css/attendworkshop_empathize.css"/>
                     <Strong>Completed ! </Strong>
-                    <input type="button" class="button" onclick=window.location.href="pa_empathize_view" value="View output"/>
+                    <input type="button" class="button" onclick=window.location.href="pa_empathize_view?id=<?php echo $id ?>" value="View output"/>
                 <?php }
             }
             else if ($_SESSION['tabActivities'][$i+1]=='Define') {
@@ -53,7 +53,7 @@ if (!isset($_SESSION)) {
                 <?php } else if ($_SESSION['tabActivities'][$i + 5] == 1) { ?>
                     <link rel="stylesheet" type="text/css" href="css/attendworkshop_define.css"/>
                     <Strong>Completed ! </Strong>
-                    <input type="button" class="button" onclick=window.location.href="pa_define_view" value="View output"/>
+                    <input type="button" class="button" onclick=window.location.href="pa_define_view?id=<?php echo $id ?>" value="View output"/>
                 <?php }
             }
             else if ($_SESSION['tabActivities'][$i+1]=='Ideate') {
@@ -64,7 +64,7 @@ if (!isset($_SESSION)) {
                 <?php } else if ($_SESSION['tabActivities'][$i + 5] == 1) { ?>
                     <link rel="stylesheet" type="text/css" href="css/attendworkshop_ideate.css"/>
                     <Strong>Completed ! </Strong>
-                    <input type="button" class="button" onclick=window.location.href="pa_ideate_view" value="View output"/>
+                    <input type="button" class="button" onclick=window.location.href="pa_ideate_view?id=<?php echo $id ?>" value="View output"/>
                 <?php }
             }
             else if($_SESSION['tabActivities'][$i+1]=='Prototype') {

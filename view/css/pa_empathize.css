@@ -30,7 +30,7 @@ h2, h3{
     overflow:auto;
     cursor:move;
     font-family:Arial;
-    font-size:12px;
+    font-size:16px;
 
     /* Adding a CSS3 shadow below the note, in the browsers which support it: */
     -moz-box-shadow:2px 2px 0 #DDDDDD;

@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-
+<h2>2. Define: Persona creation</h2>
 
 <?php
 if (!isset($_SESSION['id_activity2'])){
@@ -61,7 +61,7 @@ while($row= $query->fetch())
 </br> </br>
 <input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_define_add_note.php" value="Add a note" /></br> </br>
 <div id="main">
-    <div class="map"><img src="img\persona.png"></div>
+    <div class="persona"><img src="img\persona4.png"></div>
     <?php echo $notes?>
 </div>
 </body>

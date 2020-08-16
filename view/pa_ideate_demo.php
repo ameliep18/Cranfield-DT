@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-
+<h2>3. Ideate: Sticky notes ideation board</h2>
 
 <?php
 if (!isset($_SESSION['id_activity3'])){
@@ -62,18 +62,8 @@ while($row= $query->fetch())
 </br> </br>
 <input type="button" id="addButton" class="green-button" onclick=window.location.href="pa_ideate_add_note.php" value="Add a note" /></br> </br>
 <div id="main">
-    <!--<a id="addButton" class="green-button" href="pa_ideate_add_note.php">Add a note</a>-->
+    <div class="board"><img src="img\board.png"></div>
     <?php echo $notes?>
 </div>
-
-<!--<h3 class="popupTitle">Add a new note</h3>
-
- The preview:
-<div id="previewNote" class="note yellow" style="left:0;top:65px;z-index:1">
-    <div class="body"></div>
-    <div class="author"></div>
-    <span class="data"></span>
-</div>-->
-
 
 </body>

@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
     <?php include('menu_participant.php');?>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="css/pa_ideate.css" />
+    <link rel="stylesheet" type="text/css" href="css/pa_empathize.css" />
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.2.6.css" media="screen" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
@@ -23,11 +23,13 @@ if (!isset($_SESSION)) {
 
 <body>
 </br></br>
+<h2>1. Empathize: Empathy map</h2>
+</br></br>
 <input type="button" class="button" onclick=window.location.href="pa_attendworkshop.php" value="Go back" />
 
 <?php
 if (!isset($_SESSION['id_activity1'])){
-    echo $id_activity = $_GET['id'];
+    $id_activity = $_GET['id'];
     $_SESSION['id_activity1']=$id_activity;
 }
 try

@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-
+<h2>1. Empathize: Empathy map</h2>
 
 <?php
 if (!isset($_SESSION['id_activity1'])){

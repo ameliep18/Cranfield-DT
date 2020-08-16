@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
     <?php include('menu_participant.php');?>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="css/pa_ideate.css" />
+    <link rel="stylesheet" type="text/css" href="css/pa_define.css" />
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.2.6.css" media="screen" />
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
@@ -22,6 +22,8 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
+</br></br>
+<h2>2. Define: Persona creation</h2>
 </br></br>
 <input type="button" class="button" onclick=window.location.href="pa_attendworkshop.php" value="Go back" />
 
@@ -60,7 +62,7 @@ while($row= $query->fetch())
 </br> </br>
 
 <div id="main">
-    <div class="map"><img src="img\persona.png"></div>
+    <div class="persona"><img src="img\persona4.png"></div>
     <?php echo $notes?>
 </div>
 </body>
