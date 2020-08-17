@@ -20,8 +20,8 @@ if (!isset($_SESSION)) {
  * A parametrer
  ***************************************************************************/
 
-$heures   = 0;  // les heures < 24
-$minutes  = 2;   // les minutes  < 60
+$heures   = 1;  // les heures < 24
+$minutes  = 00;   // les minutes  < 60
 $secondes = 00;  // les secondes  < 60
 
 $annee = date("Y");  // par defaut cette année

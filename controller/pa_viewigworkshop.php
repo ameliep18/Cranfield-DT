@@ -19,5 +19,6 @@ $tabMyGroup = displayMyGroup($bdd, $id_group);
 $_SESSION['tabMyWorkshop'] = $tabMyWorkshop;
 $_SESSION['tabMyGroup'] = $tabMyGroup;
 $_SESSION['id_workshop'] = $id_workshop;
+$_SESSION['id_group'] = $id_group;
 //Display the view
 header('location: ../view/pa_viewigworkshop.php');

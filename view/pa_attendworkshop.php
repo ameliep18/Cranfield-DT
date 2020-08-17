@@ -19,7 +19,17 @@ if (!isset($_SESSION)) {
 </br></br>
 <h2>My Design Thinking Workshop : </br> <?php echo $_SESSION['tabMyWorkshop'][1]; ?></h2>
 <h3> <a href="https://teams.microsoft.com/l/channel/19%3a9bf500a72cb14178bb65a4f7be73dedc%40thread.tacv2/G%25C3%25A9n%25C3%25A9ral?groupId=97c64e90-aa10-4fe4-99e7-5de8186713c7&tenantId=31dca259-f714-4c48-ba5c-aa96dcf60aaa" target="_blank"> Access the Microsoft Teams global meeting </a>
+    </br></br>
+    <?php
+    $imax = sizeof($_SESSION['tabActivities']);
+    for ($i=0; $i<$imax; $i=$i+6 ) {
+        $id = $_SESSION['tabActivities'][$i];
+        if ($_SESSION['tabActivities'][$i+1]=='Test' && $_SESSION['tabActivities'][$i+5] == 1) { ?>
+            <input type="button" class="eval" onclick=window.location.href="pa_evaluate.php" value="Evaluate workshop"/>
+        <?php }
+    }?>
 </h3>
+
 
 </br>
 <div id="conteneur">
@@ -27,7 +37,7 @@ if (!isset($_SESSION)) {
     $imax = sizeof($_SESSION['tabActivities']);
     $j=1;
     for ($i=0; $i<$imax; $i=$i+6 ) {
-        $id = $_SESSION['tabActivities'][$i];?>
+        $id = $_SESSION['tabActivities'][$i]; ?>
         <div class="<?php echo strtolower($_SESSION['tabActivities'][$i+1]);?>">
         <h2><?php echo $j;?>. <?php echo $_SESSION['tabActivities'][$i+1];?></h2>
         <span> <Strong>Duration: </Strong> <?php echo $_SESSION['tabActivities'][$i+2];?></span> </br></br>
