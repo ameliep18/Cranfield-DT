@@ -24,19 +24,25 @@ if (!isset($_SESSION)) {
         <h2>First group's final output</h2>
         <span> <Strong>Name: </Strong> The best product of the world</span> </br></br>
         <span> <Strong>Prototype: </Strong></span> </br></br><div class="output1"><img src="img\prototype.png"></div>  </br></br>
-        <input type="button" class="button" onclick=window.location.href="" value="Choose this final output" />
+        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=1" value="Evaluate this output" />
     </div>
     <div class="group2output">
         <h2>Second group's final output</h2>
         <span> <Strong>Name: </Strong> The most innovative product</span> </br></br>
         <span> <Strong>Prototype: </Strong> </span> </br></br><div class="output2"><img src="img\prototype.png"></div> </br></br>
-        <input type="button" class="button" onclick=window.location.href="" value="Choose this final output" />
+        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=2" value="Evaluate this output" />
     </div>
     <div class="group3output">
         <h2>Third group's final output</h2>
         <span> <Strong>Name: </Strong> Our innovative product</span> </br></br>
         <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output3"><img src="img\prototype.png"></div> </br></br>
-        <input type="button" class="button" onclick=window.location.href="" value="Choose this final output" />
+        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=3" value="Evaluate this output" />
+    </div>
+    <div class="group4output">
+        <h2>Fourth group's final output</h2>
+        <span> <Strong>Name: </Strong> Our innovative solution</span> </br></br>
+        <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output4"><img src="img\prototype.png"></div> </br></br>
+        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=4" value="Evaluate this output" />
     </div>
 </div>
 </br> </br>

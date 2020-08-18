@@ -74,3 +74,18 @@ h2, h3{
     width: 100px;
     height: 100px;
 }
+
+.group4output {
+    width: 150px;
+    border: 0.05mm solid black;
+    background-color: white;
+    text-align: center;
+    /* Marge intérieure */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px; /* Marge extérieure */
+}
+
+.group4output .output4 img {
+    width: 100px;
+    height: 100px;
+}

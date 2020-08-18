@@ -18,7 +18,6 @@ h2{
 h3{
     text-align: center;
 }
-
 form {
     display: flex;
     flex-direction: column;
@@ -39,6 +38,14 @@ img{
 .header{
     margin-bottom: 5px;
     display: inline-block;
+}
+
+.title{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    font-style:italic;
 }
 
 .fields {
