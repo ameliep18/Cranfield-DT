@@ -9,7 +9,8 @@ if (!isset($_SESSION)) {
 <head>
     <div class="header"><img src="img\header.png"></div>
     <?php
-    include('menu_judge.php');?>
+    include('menu_judge.php');
+    include('../model/evaluation.php')?>
 
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/ju_viewoutputs.css"/>
@@ -22,27 +23,65 @@ if (!isset($_SESSION)) {
 <div id="conteneur">
     <div class="group1output">
         <h2>First group's final output</h2>
-        <span> <Strong>Name: </Strong> The best product of the world</span> </br></br>
         <span> <Strong>Prototype: </Strong></span> </br></br><div class="output1"><img src="img\prototype.png"></div>  </br></br>
-        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=1" value="Evaluate this output" />
+        <?php
+        $j=0;
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        if ($isEval == 0) { ?>
+            <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=1" value="Evaluate this output" />
+        <?php }
+        else if ($isEval == 1) {
+            $j++;
+            $grade = getEval($bdd, $_SESSION['id_workshop'], 1);?>
+            <Strong>Completed ! </Strong>
+            </br> <Strong>Grade: <?php echo $grade;?>/15</Strong>
+        <?php }?>
+
     </div>
     <div class="group2output">
         <h2>Second group's final output</h2>
-        <span> <Strong>Name: </Strong> The most innovative product</span> </br></br>
         <span> <Strong>Prototype: </Strong> </span> </br></br><div class="output2"><img src="img\prototype.png"></div> </br></br>
-        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=2" value="Evaluate this output" />
+        <?php
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        if ($isEval == 0) { ?>
+            <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=2" value="Evaluate this output" />
+        <?php }
+        else if ($isEval == 1) {
+            $j++;
+            $grade = getEval($bdd, $_SESSION['id_workshop'], 2);?>
+            <Strong>Completed ! </Strong>
+            </br> <Strong>Grade: <?php echo $grade;?>/15</Strong>
+        <?php }?>
     </div>
     <div class="group3output">
         <h2>Third group's final output</h2>
-        <span> <Strong>Name: </Strong> Our innovative product</span> </br></br>
         <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output3"><img src="img\prototype.png"></div> </br></br>
-        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=3" value="Evaluate this output" />
+        <?php
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        if ($isEval == 0) { ?>
+            <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=3" value="Evaluate this output" />
+        <?php }
+        else if ($isEval == 1) {
+            $j++;
+            $grade = getEval($bdd, $_SESSION['id_workshop'], 3);?>
+            <Strong>Completed ! </Strong>
+            </br> <Strong>Grade: <?php echo $grade;?>/15</Strong>
+        <?php }?>
     </div>
     <div class="group4output">
         <h2>Fourth group's final output</h2>
-        <span> <Strong>Name: </Strong> Our innovative solution</span> </br></br>
         <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output4"><img src="img\prototype.png"></div> </br></br>
-        <input type="button" class="button" onclick=window.location.href="ju_evaluate?id=4" value="Evaluate this output" />
+        <?php
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        if ($isEval == 0) { ?>
+            <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=4" value="Evaluate this output" />
+        <?php }
+        else if ($isEval == 1) {
+            $j++;
+            $grade = getEval($bdd, $_SESSION['id_workshop'], 4);?>
+            <Strong>Completed ! </Strong>
+            </br> <Strong>Grade: <?php echo $grade;?>/15</Strong>
+        <?php }?>
     </div>
 </div>
 </br> </br>

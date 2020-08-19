@@ -136,6 +136,12 @@
             </td>
         </tr>
         <tr>
+            <td>Microsoft Teams global meeting link</td>
+            <td>
+                <input type="text" class="fields" name="link" required/>
+            </td>
+        </tr>
+        <tr>
             <td>Judges</td>
             <td>
                 <input type="checkbox" id="judge1" name="judge" value="<?php echo $_SESSION['tabJudges'][0];?>">

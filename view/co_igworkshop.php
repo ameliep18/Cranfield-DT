@@ -33,7 +33,7 @@
     <?php
     $imax = sizeof($_SESSION['tabIGWorkshop']);
 
-    for ($i=0; $i<$imax; $i=$i+9) {
+    for ($i=0; $i<$imax; $i=$i+10) {
     ?>
 
     <tbody> <!-- Content of the table -->
@@ -43,10 +43,10 @@
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+2]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+3]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+4]; ?></td>
-        <td><?php echo $_SESSION['tabIGWorkshop'][$i+5]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+6]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+7]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+8]; ?></td>
+        <td><?php echo $_SESSION['tabIGWorkshop'][$i+9]; ?></td>
         <td class="button">
             <input type="button" onclick=window.location.href="../controller/co_viewigworkshop?id=<?php echo $id?>" value="View/Edit" />
         </td>

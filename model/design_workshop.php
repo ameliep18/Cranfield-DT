@@ -11,14 +11,15 @@ catch (Exception $e)
 }
 
 //Function to create a coaching in the database
-function createWorkshop (PDO $bdd, $title, $start_date, $end_date, $goals, $id_coordinator, $id_judges, $id_technicians, $nb_groups, $status) {
-    $statement = $bdd->prepare('INSERT INTO workshop(id_workshop, title, start_date, end_date, goals, id_coordinator, id_judges, id_technicians, nb_groups, status)
+function createWorkshop (PDO $bdd, $title, $start_date, $end_date, $goals, $link, $id_coordinator, $id_judges, $id_technicians, $nb_groups, $status) {
+    $statement = $bdd->prepare('INSERT INTO workshop(id_workshop, title, start_date, end_date, goals, link, id_coordinator, id_judges, id_technicians, nb_groups, status)
 VALUES(
 NULL,
 :title, 
 :start_date,
 :end_date, 
 :goals, 
+:link,
 :id_coordinator, 
 :id_judges,
 :id_technicians,
@@ -28,6 +29,7 @@ NULL,
     $statement->bindParam(":start_date", $start_date);
     $statement->bindParam(":end_date", $end_date);
     $statement->bindParam(":goals", $goals);
+    $statement->bindParam(":link", $link);
     $statement->bindParam(":id_coordinator", $id_coordinator);
     $statement->bindParam(":id_judges", $id_judges);
     $statement->bindParam(":id_technicians", $id_technicians);

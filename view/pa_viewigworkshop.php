@@ -33,10 +33,10 @@ if (!isset($_SESSION)) {
         <h3>Workshop's information</h3> </br>
         <Strong>Start date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][2]; ?> <Strong>  End date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][3]; ?> </br></br>
         <Strong>Goals: </Strong> <?php echo $_SESSION['tabMyWorkshop'][4]; ?> </br></br>
-        <Strong>Coordinator: </Strong> <?php echo $_SESSION['tabMyWorkshop'][5]; ?> </br></br>
+        <Strong>Coordinator: </Strong> <?php echo $_SESSION['tabMyWorkshop'][6]; ?> </br></br>
         <Strong>Judges: </Strong> Alan, Mary and Patrick </br></br>
-        <Strong>Technician: </Strong> <?php echo $_SESSION['tabMyWorkshop'][7]; ?> </br></br>
-        <Strong>Number of groups: </Strong> <?php echo $_SESSION['tabMyWorkshop'][8]; ?>
+        <Strong>Technician: </Strong> <?php echo $_SESSION['tabMyWorkshop'][8]; ?> </br></br>
+        <Strong>Number of groups: </Strong> <?php echo $_SESSION['tabMyWorkshop'][9]; ?>
     </div>
 
     <div class="group">

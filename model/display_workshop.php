@@ -24,6 +24,7 @@ function displayWorkshop(PDO $bdd, $status) {
         $tab[] = $data['start_date'];
         $tab[] = $data['end_date'];
         $tab[] = $data['goals'];
+        $tab[] = $data['link'];
         $tab[] = $data['id_coordinator'];
         $tab[] = $data['id_judges'];
         $tab[] = $data['id_technicians'];
@@ -81,6 +82,7 @@ function displayMyWorkshops(PDO $bdd, $id, $status) {
         $tab[] = $data['start_date'];
         $tab[] = $data['end_date'];
         $tab[] = $data['goals'];
+        $tab[] = $data['link'];
         $tab[] = getNameFromId($bdd, $data['id_coordinator']);
         $tab[] = getNameFromId($bdd, $data['id_judges']);
         $tab[] = getNameFromId($bdd, $data['id_technicians']);
@@ -104,6 +106,7 @@ function displayMyWorkshop(PDO $bdd, $id_workshop) {
         $tab[] = $data['start_date'];
         $tab[] = $data['end_date'];
         $tab[] = $data['goals'];
+        $tab[] = $data['link'];
         $tab[] = getFirstnameFromId($bdd, $data['id_coordinator']);
         $tab[] = getFirstnameFromId($bdd, $data['id_judges']);
         $tab[] = getFirstnameFromId($bdd, $data['id_technicians']);
@@ -337,4 +340,14 @@ function displayWorkshopActivities(PDO $bdd, $id_workshop){
         $tab[] = $data['status'];
     }
     return $tab;
+}
+
+function getLink(PDO $bdd, $id_workshop) {
+    $statement = $bdd->prepare('SELECT link FROM workshop WHERE id_workshop=:id');
+    $statement->bindParam(":id", $id_workshop);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $link = $data['link'];
+    }
+    return $link;
 }
