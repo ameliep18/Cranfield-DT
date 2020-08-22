@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
     <?php
     $imax = sizeof($_SESSION['tabWorkshops']);
 
-    for ($i=0; $i<$imax; $i=$i+9) {
+    for ($i=0; $i<$imax; $i=$i+10) {
     ?>
 
     <tbody> <!-- Content of the table -->
@@ -43,9 +43,9 @@ if (!isset($_SESSION)) {
         <td><?php echo $_SESSION['tabWorkshops'][$i+2]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+3]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+4]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+5]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+7]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshops'][$i+6]; ?></td>
         <td><?php echo $_SESSION['tabWorkshops'][$i+8]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshops'][$i+9]; ?></td>
         <td class="button">
             <input type="button" onclick=window.location.href="../controller/ju_viewtheworkshop?id=<?php echo $id?>" value="View" />
         </td>

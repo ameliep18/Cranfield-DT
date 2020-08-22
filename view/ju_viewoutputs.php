@@ -24,6 +24,7 @@ if (!isset($_SESSION)) {
     <div class="group1output">
         <h2>First group's final output</h2>
         <span> <Strong>Prototype: </Strong></span> </br></br><div class="output1"><img src="img\prototype.png"></div>  </br></br>
+        <input type="button" class="button" onclick=window.location.href="" value="View features" /> </br></br>
         <?php
         $j=0;
         $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
@@ -41,8 +42,9 @@ if (!isset($_SESSION)) {
     <div class="group2output">
         <h2>Second group's final output</h2>
         <span> <Strong>Prototype: </Strong> </span> </br></br><div class="output2"><img src="img\prototype.png"></div> </br></br>
+        <input type="button" class="button" onclick=window.location.href="" value="View features" /> </br></br>
         <?php
-        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 2, 0);
         if ($isEval == 0) { ?>
             <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=2" value="Evaluate this output" />
         <?php }
@@ -56,8 +58,9 @@ if (!isset($_SESSION)) {
     <div class="group3output">
         <h2>Third group's final output</h2>
         <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output3"><img src="img\prototype.png"></div> </br></br>
+        <input type="button" class="button" onclick=window.location.href="" value="View features" /> </br></br>
         <?php
-        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 3, 0);
         if ($isEval == 0) { ?>
             <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=3" value="Evaluate this output" />
         <?php }
@@ -71,8 +74,9 @@ if (!isset($_SESSION)) {
     <div class="group4output">
         <h2>Fourth group's final output</h2>
         <span> <Strong>Prototype: </Strong> </span></br> </br><div class="output4"><img src="img\prototype.png"></div> </br></br>
+        <input type="button" class="button" onclick=window.location.href="" value="View features" /> </br></br>
         <?php
-        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 1, 0);
+        $isEval = isGroupEvaluation($bdd, $_SESSION['id_workshop'], 4, 0);
         if ($isEval == 0) { ?>
             <input type="button" class="button" onclick=window.location.href="../controller/ju_evaluategroups?id=4" value="Evaluate this output" />
         <?php }

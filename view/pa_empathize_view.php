@@ -25,7 +25,7 @@ if (!isset($_SESSION)) {
 </br></br>
 <h2>1. Empathize: Empathy map</h2>
 </br></br>
-<input type="button" class="button" onclick=window.location.href="pa_attendworkshop.php" value="Go back" />
+<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
 
 <?php
 if (!isset($_SESSION['id_activity1'])){

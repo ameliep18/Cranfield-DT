@@ -81,11 +81,11 @@ if (!isset($_SESSION)) {
                 if ($_SESSION['tabActivities'][$i+5] == 0) {
                     ?>
                     <input type="button" class="button"
-                           onclick=window.location.href="pa_prototype?id=<?php echo $id ?>" value="Start"/>
+                           onclick=window.location.href="pa_prototype_update?id=<?php echo $id ?>" value="Start"/>
                 <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
                     <link rel="stylesheet" type="text/css" href="css/attendworkshop_prototype.css"/>
                     <Strong>Completed ! </Strong>
-                    <input type="button" class="button" onclick=window.location.href="pa_prototype_view" value="View output"/>
+                    <input type="button" class="button" onclick=window.location.href="pa_prototype_view" value="View/Add output"/>
                 <?php }
             }
             else if($_SESSION['tabActivities'][$i+1]=='Test') {

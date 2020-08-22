@@ -1,0 +1,44 @@
+body {
+    font-size: 12px;
+    font-family: Arial;
+    background: floralwhite;
+}
+h1 {
+    text-align: center;
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial;
+}
+
+h2, h3{
+    text-align: center;
+}
+
+.header{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main{
+    /* Contains all the notes and limits their movement: */
+    margin:0 auto;
+    position:relative;
+    width:1000px;
+    height:700px;
+    z-index:10;
+}
+
+#main .image img{
+    position: center;
+    width: 900px;
+    height: 500px;
+}
