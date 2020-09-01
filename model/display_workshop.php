@@ -351,3 +351,14 @@ function getLink(PDO $bdd, $id_workshop) {
     }
     return $link;
 }
+
+function displayWorkshopGroupsID(PDO $bdd, $id_workshop){
+    $statement = $bdd->prepare('SELECT * FROM workshop_group WHERE id_workshop=:id');
+    $statement->bindParam(":id", $id_workshop);
+    $statement->execute();
+    $tab=array();
+    while ($data = $statement->fetch()) {
+        $tab[] = $data['id_group'];
+    }
+    return $tab;
+}

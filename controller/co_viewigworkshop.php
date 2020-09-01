@@ -8,12 +8,12 @@ include('../model/stakeholders.php');
 if (!isset($_SESSION)) {
     session_start();
 }
+$id = $_GET['id'];
+$_SESSION['id_workshop'] = $id;
+$link = getLink($bdd, $id);
 
-//Display the list of workshops
-$tab1 = displayWorkshop($bdd, 0);
 
-//Add the list of workshops in a session variable
-$_SESSION['tabWorkshop'] = $tab1;
+$_SESSION['link'] = $link;
 
 //Display the view
-header('location: ../view/co_pendingworkshop.php');
+header('location: ../view/co_viewigworkshop.php');

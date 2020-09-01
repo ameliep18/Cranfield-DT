@@ -14,5 +14,5 @@ setActivityStatus($bdd, $id_activity, 1);
 
 
 //Display the view
-//header('location: ../controller/pa_attendworkshop.php');
+header('location: ../controller/pa_attendworkshop.php');
 

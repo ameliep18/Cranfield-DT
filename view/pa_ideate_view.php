@@ -27,6 +27,7 @@ if (!isset($_SESSION)) {
 </br></br>
 <input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
 
+
 <?php
 try
 {
@@ -36,7 +37,7 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-$id_activity=3;
+$id_activity=$_SESSION['id_activity3'];
 $query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
 $query->bindParam(":id_activity", $id_activity);
 $query->execute();

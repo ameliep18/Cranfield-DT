@@ -19,5 +19,4 @@ if ($isEval==1){
     $grade = getEval($bdd, $id_workshop, $id_group);
     $_SESSION['grade'] = $grade;
 }
-
 header('location: ../view/ju_viewoutputs.php');

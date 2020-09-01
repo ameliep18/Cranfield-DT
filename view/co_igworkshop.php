@@ -14,7 +14,7 @@
 
 <body>
 </br></br>
-<h2>In-going Workshops</h2>
+<h2>In-going workshops</h2>
 </br>
 
 <table>
@@ -48,7 +48,7 @@
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+8]; ?></td>
         <td><?php echo $_SESSION['tabIGWorkshop'][$i+9]; ?></td>
         <td class="button">
-            <input type="button" onclick=window.location.href="../controller/co_viewigworkshop?id=<?php echo $id?>" value="View/Edit" />
+            <input type="button" onclick=window.location.href="../controller/co_viewigworkshop?id=<?php echo $id?>" value="View" />
         </td>
     </tr>
     <?php } ?>

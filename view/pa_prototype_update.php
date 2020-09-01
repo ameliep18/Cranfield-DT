@@ -11,8 +11,6 @@ $_SESSION['id_activity4'] = $id_activity?>
 <head>
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
-    </br> </br>
-    <?php include('pa_prototype_countdown.php');?>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/pa_prototype.css" />
 </head>
@@ -22,6 +20,8 @@ $_SESSION['id_activity4'] = $id_activity?>
 <h2>4. Prototype: Insert images of your prototype</h2>
 </br></br>
 <input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
+</br></br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_completeactivity?id=<?php echo $_SESSION['id_activity4']?>" value="Complete" />
 </br></br>
 
 <form action="../controller/pa_prototype_upload.php" method="post" enctype="multipart/form-data">

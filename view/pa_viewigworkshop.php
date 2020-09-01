@@ -40,8 +40,12 @@ if (!isset($_SESSION)) {
     </div>
 
     <div class="group">
-        <h3>My group: Group 1</h3> </br>
-        <Strong>Members: </Strong> <?php echo $_SESSION['tabMyGroup'][2][0]; ?>, </br><?php echo $_SESSION['tabMyGroup'][2][1]; ?>, </br> <?php echo $_SESSION['tabMyGroup'][2][2]; ?>, </br> <?php echo $_SESSION['tabMyGroup'][2][3]; ?>, </br><?php echo $_SESSION['tabMyGroup'][2][4]; ?>.</br></br>
+        <h3>My group:</h3> </br>
+        <Strong>Members: </Strong> <?php
+        $imax = sizeof($_SESSION['tabMyGroup'][2]);
+        for ($i=0; $i<$imax; $i++) {
+            echo $_SESSION['tabMyGroup'][2][$i]; ?> </br>
+        <?php } ?>
         <Strong>Expert: </Strong><?php echo $_SESSION['tabMyGroup'][3]; ?>
     </div>
 </div>

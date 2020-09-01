@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 
 <body>
 </br></br>
-<h2>My In-going Workshops</h2>
+<h2>My in-going workshops</h2>
 </br>
 
 <table>
@@ -35,7 +35,6 @@ if (!isset($_SESSION)) {
 
     for ($i=0; $i<$imax; $i=$i+10) {
     ?>
-
     <tbody> <!-- Content of the table -->
     <tr>
         <td><?php echo $id = $_SESSION['tabWorkshops'][$i];?></td>

@@ -102,68 +102,196 @@ function getNamesFromId(PDO $bdd, $charId) {
     $name_array4 = array();
     $name_array5 = array();
     $tabId = explode(",", $charId);
-    $firstId = $tabId[0];
-    $secondId = $tabId[1];
-    $thirdId = $tabId[2];
-    $fourthId = $tabId[3];
-    $fifthId = $tabId[4];
-
-    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
-    $statement->bindParam(":id", $firstId);
-    $statement->execute();
-    //$statement->fetchAll();
-    while ($data = $statement->fetch()) {
-        $name_array1[] = $data['firstname'];
-        $name_array1[] = $data['surname'];
+    $size = sizeof($tabId);
+    if ($size==1) {
+        $firstId = $tabId[0];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $firstId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array1[] = $data['firstname'];
+            $name_array1[] = $data['surname'];
+        }
+        $fullname1 = implode(" ", $name_array1);
+        $tabfullname[] = $fullname1;
     }
-    $fullname1 = implode(" ", $name_array1);
+    else if ($size==2) {
+        $firstId = $tabId[0];
+        $secondId = $tabId[1];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $firstId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array1[] = $data['firstname'];
+            $name_array1[] = $data['surname'];
+        }
+        $fullname1 = implode(" ", $name_array1);
 
-    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
-    $statement->bindParam(":id", $secondId);
-    $statement->execute();
-    //$statement->fetchAll();
-    while ($data = $statement->fetch()) {
-        $name_array2[] = $data['firstname'];
-        $name_array2[] = $data['surname'];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $secondId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array2[] = $data['firstname'];
+            $name_array2[] = $data['surname'];
+        }
+        $fullname2 = implode(" ", $name_array2);
+        $tabfullname[] = $fullname1;
+        $tabfullname[] = $fullname2;
     }
-    $fullname2 = implode(" ", $name_array2);
+    else if ($size==3) {
+        $firstId = $tabId[0];
+        $secondId = $tabId[1];
+        $thirdId = $tabId[2];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $firstId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array1[] = $data['firstname'];
+            $name_array1[] = $data['surname'];
+        }
+        $fullname1 = implode(" ", $name_array1);
 
-    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
-    $statement->bindParam(":id", $thirdId);
-    $statement->execute();
-    //$statement->fetchAll();
-    while ($data = $statement->fetch()) {
-        $name_array3[] = $data['firstname'];
-        $name_array3[] = $data['surname'];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $secondId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array2[] = $data['firstname'];
+            $name_array2[] = $data['surname'];
+        }
+        $fullname2 = implode(" ", $name_array2);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $thirdId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array3[] = $data['firstname'];
+            $name_array3[] = $data['surname'];
+        }
+        $fullname3 = implode(" ", $name_array3);
+        $tabfullname[] = $fullname1;
+        $tabfullname[] = $fullname2;
+        $tabfullname[] = $fullname3;
     }
-    $fullname3 = implode(" ", $name_array3);
+    else if ($size==4) {
+        $firstId = $tabId[0];
+        $secondId = $tabId[1];
+        $thirdId = $tabId[2];
+        $fourthId = $tabId[3];
+        $fifthId = 0;
 
-    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
-    $statement->bindParam(":id", $fourthId);
-    $statement->execute();
-    //$statement->fetchAll();
-    while ($data = $statement->fetch()) {
-        $name_array4[] = $data['firstname'];
-        $name_array4[] = $data['surname'];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $firstId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array1[] = $data['firstname'];
+            $name_array1[] = $data['surname'];
+        }
+        $fullname1 = implode(" ", $name_array1);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $secondId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array2[] = $data['firstname'];
+            $name_array2[] = $data['surname'];
+        }
+        $fullname2 = implode(" ", $name_array2);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $thirdId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array3[] = $data['firstname'];
+            $name_array3[] = $data['surname'];
+        }
+        $fullname3 = implode(" ", $name_array3);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $fourthId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array4[] = $data['firstname'];
+            $name_array4[] = $data['surname'];
+        }
+        $fullname4 = implode(" ", $name_array4);
+        $tabfullname[] = $fullname1;
+        $tabfullname[] = $fullname2;
+        $tabfullname[] = $fullname3;
+        $tabfullname[] = $fullname4;
     }
-    $fullname4 = implode(" ", $name_array4);
+    else if ($size==5) {
+        $firstId = $tabId[0];
+        $secondId = $tabId[1];
+        $thirdId = $tabId[2];
+        $fourthId = $tabId[3];
+        $fifthId = $tabId[4];
 
-    $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
-    $statement->bindParam(":id", $fifthId);
-    $statement->execute();
-    //$statement->fetchAll();
-    while ($data = $statement->fetch()) {
-        $name_array5[] = $data['firstname'];
-        $name_array5[] = $data['surname'];
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $firstId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array1[] = $data['firstname'];
+            $name_array1[] = $data['surname'];
+        }
+        $fullname1 = implode(" ", $name_array1);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $secondId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array2[] = $data['firstname'];
+            $name_array2[] = $data['surname'];
+        }
+        $fullname2 = implode(" ", $name_array2);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $thirdId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array3[] = $data['firstname'];
+            $name_array3[] = $data['surname'];
+        }
+        $fullname3 = implode(" ", $name_array3);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $fourthId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array4[] = $data['firstname'];
+            $name_array4[] = $data['surname'];
+        }
+        $fullname4 = implode(" ", $name_array4);
+
+        $statement = $bdd->prepare('SELECT firstname, surname FROM stakeholders WHERE id_stakeholder=:id');
+        $statement->bindParam(":id", $fifthId);
+        $statement->execute();
+        //$statement->fetchAll();
+        while ($data = $statement->fetch()) {
+            $name_array5[] = $data['firstname'];
+            $name_array5[] = $data['surname'];
+        }
+        $fullname5 = implode(" ", $name_array5);
+
+        $tabfullname[] = $fullname1;
+        $tabfullname[] = $fullname2;
+        $tabfullname[] = $fullname3;
+        $tabfullname[] = $fullname4;
+        $tabfullname[] = $fullname5;
     }
-    $fullname5 = implode(" ", $name_array5);
-
-    $tabfullname[] = $fullname1;
-    $tabfullname[] = $fullname2;
-    $tabfullname[] = $fullname3;
-    $tabfullname[] = $fullname4;
-    $tabfullname[] = $fullname5;
-
 
     return $tabfullname;
 }

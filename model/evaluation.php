@@ -72,3 +72,32 @@ function getEval(PDO $bdd, $id_workshop, $id_group) {
     }
     return $grade;
 }
+
+function getTest(PDO $bdd, $id_workshop, $id_group) {
+    $statement = $bdd->prepare('SELECT text FROM feedback WHERE (id_workshop=:id_workshop AND id_group=:id_group AND status=2)');
+    $statement->bindParam(":id_workshop", $id_workshop);
+    $statement->bindParam(":id_group", $id_group);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $feedback = $data['text'];
+    }
+    return $feedback;
+}
+
+function isWorkshopEvaluation(PDO $bdd, $id_workshop, $id_stakeholder, $status) {
+    $statement = $bdd->prepare('SELECT id_feedback FROM feedback WHERE (id_workshop=:id_workshop AND id_stakeholder=:id_stakeholder AND status=:status)');
+    $statement->bindParam(":id_workshop", $id_workshop);
+    $statement->bindParam(":id_stakeholder", $id_stakeholder);
+    $statement->bindParam(":status", $status);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $id_feedback = $data['id_feedback'];
+    }
+    if (!isset ($id_feedback)) {
+        $isFeedback = 0;
+    }
+    else {
+        $isFeedback = 1;
+    }
+    return $isFeedback;
+}

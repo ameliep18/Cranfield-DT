@@ -17,7 +17,6 @@ echo '<link rel="stylesheet" type="text/css" href="C:/wamp64/www/OLC/view/menu_a
         <li><a href="#">Design Thinking workshops</a>
         <ul>
             <li><a href="../view/co_designworkshop.php">Design a new Design Thinking workshop</a></li>
-            <li><a href="../controller/co_pendingworkshop.php">Pending Design Thinking workshops</a></li>
             <li><a href="../controller/co_igworkshop.php">In-going Design Thinking workshops</a></li>
             <li><a href="../controller/co_deliveredworkshop.php">Delivered Design Thinking workshops</a></li>
         </ul>

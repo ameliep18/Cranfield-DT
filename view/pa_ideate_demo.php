@@ -10,7 +10,10 @@ if (!isset($_SESSION)) {
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
     </br> </br>
-    <?php include('pa_ideate_countdown.php');?>
+    <?php
+    if (!isset($_SESSION['id_activity3'])){
+        $_SESSION['id_activity3']= $_GET['id'];
+    }?>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="css/pa_ideate.css" />
@@ -25,13 +28,11 @@ if (!isset($_SESSION)) {
 
 <body>
 <h2>3. Ideate: Sticky notes ideation board</h2>
-
+</br></br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
+</br></br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_completeactivity?id=<?php echo $_SESSION['id_activity3']?>" value="Complete" />
 <?php
-if (!isset($_SESSION['id_activity3'])){
-    $id_activity=$_GET['id'];
-    $_SESSION['id_activity3']=$id_activity;
-}
-
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname=cranfield_old_dt;charset=utf8', 'root', '');

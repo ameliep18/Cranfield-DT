@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
 
 <body>
 </br></br>
-<h2>My Delivered Workshops</h2>
+<h2>My delivered workshops</h2>
 </br>
 
 <table>

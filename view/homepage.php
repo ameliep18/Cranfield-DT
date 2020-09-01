@@ -30,7 +30,10 @@ session_start ();?>
 
 
 <body>
-</br> </br>
+</br> </br></br> </br>
+<h2>Hello <?php echo $_SESSION['firstname'];?> <?php echo $_SESSION['surname'];?>,</h2>
+</br>
+<h2>Welcome to the digitalised OLC Design Thinking platform!</h2>
 
 </body>
 </html>

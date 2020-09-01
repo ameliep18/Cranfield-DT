@@ -10,7 +10,10 @@ if (!isset($_SESSION)) {
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
     </br> </br>
-    <?php include('pa_define_countdown.php');?>
+    <?php
+    if (!isset($_SESSION['id_activity2'])){
+        $_SESSION['id_activity2']=$_GET['id'];;
+    }?>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="css/pa_define.css" />
@@ -25,12 +28,11 @@ if (!isset($_SESSION)) {
 
 <body>
 <h2>2. Define: Persona creation</h2>
-
+</br></br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
+</br></br>
+<input type="button" class="button" onclick=window.location.href="../controller/pa_completeactivity?id=<?php echo $_SESSION['id_activity2']?>" value="Complete" />
 <?php
-if (!isset($_SESSION['id_activity2'])){
-    $id_activity=$_GET['id'];
-    $_SESSION['id_activity2']=$id_activity;
-}
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname=cranfield_old_dt;charset=utf8', 'root', '');

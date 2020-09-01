@@ -25,7 +25,7 @@ if (!isset($_SESSION)) {
     for ($i=0; $i<$imax; $i=$i+6 ) {
         $id = $_SESSION['tabActivities'][$i];
         if ($_SESSION['tabActivities'][$i+1]=='Test' && $_SESSION['tabActivities'][$i+5] == 1) { ?>
-            <input type="button" class="eval" onclick=window.location.href="pa_evaluate.php" value="Evaluate workshop"/>
+            <input type="button" class="eval" onclick=window.location.href="../controller/pa_evaluate.php" value="Evaluate workshop"/>
         <?php }
     }?>
 </h3>
