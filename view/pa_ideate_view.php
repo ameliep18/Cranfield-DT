@@ -37,7 +37,10 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-$id_activity=$_SESSION['id_activity3'];
+if (!isset($_SESSION['id_activity3'])){
+    $_SESSION['id_activity3']= $_GET['id'];
+}
+$id_activity = $_SESSION['id_activity3'];
 $query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
 $query->bindParam(":id_activity", $id_activity);
 $query->execute();

@@ -46,6 +46,7 @@ if (!isset($_SESSION)) {
         for ($i=0; $i<$imax; $i++) {
             echo $_SESSION['tabMyGroup'][2][$i]; ?> </br>
         <?php } ?>
+        </br></br>
         <Strong>Expert: </Strong><?php echo $_SESSION['tabMyGroup'][3]; ?>
     </div>
 </div>

@@ -16,13 +16,4 @@ catch (Exception $e)
 {
     die('Error : ' . $e->getMessage());
 }
-//Collect all the contents of the table
-$response = $bdd->query('SELECT firstname FROM employee WHERE status=1');
 
-// Display each line of the employee table
-while ($data = $response->fetch())
-{
-    echo $data['firstname'];
-}
-
-$response->closeCursor(); // End the request treatment*/
