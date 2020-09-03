@@ -85,7 +85,7 @@ if (!isset($_SESSION)) {
                 <?php } else if ($_SESSION['tabActivities'][$i+5] == 1) { ?>
                     <link rel="stylesheet" type="text/css" href="css/attendworkshop_prototype.css"/>
                     <Strong>Completed ! </Strong>
-                    <input type="button" class="button" onclick=window.location.href="pa_prototype_view" value="View/Add output"/>
+                    <input type="button" class="button" onclick=window.location.href="pa_prototype_view" value="View output"/>
                 <?php }
             }
             else if($_SESSION['tabActivities'][$i+1]=='Test') {

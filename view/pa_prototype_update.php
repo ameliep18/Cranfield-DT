@@ -16,8 +16,9 @@ $_SESSION['id_activity4'] = $id_activity?>
 </head>
 
 <body>
+
 </br></br>
-<h2>4. Prototype: Insert images of your prototype</h2>
+<h2>4. Prototype: Insert an image of your prototype</h2>
 </br></br>
 <input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
 </br></br>

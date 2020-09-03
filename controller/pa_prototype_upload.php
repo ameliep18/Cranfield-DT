@@ -3,15 +3,16 @@
 //Import the models
 include('../model/display_workshop.php');
 include('../model/stakeholders.php');
+include('../model/prototype_images.php');
 
 //Start the session if it's not already done
 if (!isset($_SESSION)) {
     session_start();
 }
 $id_activity = $_SESSION['id_activity4'];
-echo $id_group = $_SESSION['id_group'];
+$id_group = $_SESSION['id_group'];
 
-/*$target_dir = "C:/wamp64/www/Cranfield-OLC-DT/uploads/";
+$target_dir = "C:/wamp64/www/Cranfield-OLC-DT/uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -40,7 +41,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }*/
 
-/*// Allow certain file formats
+// Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
@@ -72,9 +73,21 @@ else {
 }
 
 setActivityStatus($bdd, $id_activity, 1);
-header('location: ../view/pa_prototype_view.php');*/
 
-transfert($bdd);
+$img_nom = $_FILES["fileToUpload"]["name"];
+$img_taille = $_FILES["fileToUpload"]["size"];
+$img_type = $imageFileType;
+$img_url = $file;
+
+uploadImage($bdd, $img_nom, $img_taille, $img_type, $img_url, $id_group);
+updateGroupOutput();
+
+$url = getGroupImage($bdd, $id_group);
+$_SESSION['output'] = $url;
+
+header('location: ../view/pa_prototype_view.php');
+
+/*transfert($bdd);
 $img_id = getImgID($bdd, $id_group);
 updateImgName($bdd, $img_id);
 $_SESSION['img_id'] = $img_id;
@@ -140,6 +153,6 @@ function updateImgName($bdd, $img_id) {
     $statement->bindParam(":img_id", $img_id);
     $statement->bindParam(":img_nom", $img_nom);
     $statement->execute();
-}
+}*/
 
-header('location: ../view/pa_prototype_view.php');
+//header('location: ../view/pa_prototype_view.php');

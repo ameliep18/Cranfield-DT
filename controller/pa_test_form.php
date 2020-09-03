@@ -24,8 +24,6 @@ $text = $_POST['feedback'];
 $status = 2;
 
 createEvaluation($bdd, $id_workshop, $id_group, $id_stakeholder, $first_criteria, $second_criteria, $third_criteria, $fourth_criteria, $fifth_criteria, $sixth_criteria, $text, $status);
-$feedback = getTest($bdd, $id_workshop, $id_group);
-$_SESSION['feedback'] = $feedback;
 
 setActivityStatus($bdd, $id_activity, 1);
 header('location: ../view/pa_test_view.php');

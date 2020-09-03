@@ -10,11 +10,15 @@ if (!isset($_SESSION)) {
 <head>
     <div class="header"><img src="img\header.png"></div>
     <?php include('menu_participant.php');?>
+    <?php include('../model/evaluation.php');?>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/pa_test.css" />
 </head>
 
 <body>
+<?php
+$feedback = getTest($bdd, $_SESSION['id_workshop'], $_SESSION['id_group']);
+$_SESSION['feedback'] = $feedback;?>
 </br></br>
 <h2>5. Test: Communicate with other participants </br> or use an online testing tool</h2>
 </br></br>
