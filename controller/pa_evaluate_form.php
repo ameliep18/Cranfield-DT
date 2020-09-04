@@ -16,7 +16,7 @@ $fourth_criteria = $_POST['fourthcriteria'];
 $fifth_criteria = $_POST['fifthcriteria'];
 $sixth_criteria = $_POST['sixthcriteria'];
 $text = $_POST['comments'];
-$status = 0;
+$status = 1;
 
 createEvaluation($bdd, $id_workshop, $id_group, $id_stakeholder, $first_criteria, $second_criteria, $third_criteria, $fourth_criteria, $fifth_criteria, $sixth_criteria, $text, $status);
 

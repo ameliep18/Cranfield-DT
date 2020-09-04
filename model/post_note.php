@@ -9,9 +9,9 @@ try {
 
 
 /* Inserting a new record in the notes DB: */
-function postNote(PDO $bdd, $id_activity, $id_participant, $author, $body, $color, $xindex, $yindex, $zindex) {
-    $statement = $bdd->prepare('   INSERT INTO notes (id_activity, id_participant, text, name, color, xyz)
-VALUES ("' . $id_activity . '","' . $id_participant . '","' . $body . '","' . $author . '","' . $color . '","' . $xindex . 'x' . $yindex . 'x' . $zindex . '")');
+function postNote(PDO $bdd, $id_activity, $id_group, $id_participant, $author, $body, $color, $xindex, $yindex, $zindex) {
+    $statement = $bdd->prepare('   INSERT INTO notes (id_activity, id_group, id_participant, text, name, color, xyz)
+VALUES ("' . $id_activity . '","'.$id_group.'","' . $id_participant . '","' . $body . '","' . $author . '","' . $color . '","' . $xindex . 'x' . $yindex . 'x' . $zindex . '")');
     $statement->execute();
 }
 

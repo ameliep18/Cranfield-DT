@@ -12,7 +12,7 @@ catch (Exception $e)
 
 //Function to display the list of workshops
 function displayWorkshop(PDO $bdd, $status) {
-    $statement = $bdd->prepare('SELECT * FROM workshop WHERE status=:status');
+    $statement = $bdd->prepare('SELECT * FROM workshop WHERE status=:status ORDER BY id_workshop ASC');
     $statement->bindParam(":status", $status);
     $statement->execute();
 
@@ -25,9 +25,9 @@ function displayWorkshop(PDO $bdd, $status) {
         $tab[] = $data['end_date'];
         $tab[] = $data['goals'];
         $tab[] = $data['link'];
-        $tab[] = $data['id_coordinator'];
-        $tab[] = $data['id_judges'];
-        $tab[] = $data['id_technicians'];
+        $tab[] = getNameFromId($bdd, $data['id_coordinator']);
+        $tab[] = getNameFromId($bdd, $data['id_judges']);
+        $tab[] = getNameFromId($bdd, $data['id_technicians']);
         $tab[] = $data['nb_groups'];
     }
     return $tab;
@@ -320,15 +320,12 @@ function setActivityStatus(PDO $bdd, $id_activity, $newstatus){
     $statement->bindParam(":id", $id_activity);
     $statement->bindParam(":newstatus", $newstatus);
     $statement->execute();
-    /*while ($data = $statement->fetch()) {
-        $status = $data['status'];
-    }
-    return $status;*/
 }
 
-function displayWorkshopActivities(PDO $bdd, $id_workshop){
-    $statement = $bdd->prepare('SELECT * FROM workshop_activity WHERE id_workshop=:id');
+function displayWorkshopActivities(PDO $bdd, $id_workshop, $id_group){
+    $statement = $bdd->prepare('SELECT * FROM workshop_activity WHERE (id_workshop=:id AND id_group=:id_group)');
     $statement->bindParam(":id", $id_workshop);
+    $statement->bindParam(":id_group", $id_group);
     $statement->execute();
     $tab=array();
     while ($data = $statement->fetch()) {

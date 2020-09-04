@@ -37,7 +37,19 @@ function getGroupImage($bdd, $id_group){
     return $url;
 }
 
+function getIdImagebyUrl($bdd, $img_url){
+    $statement = $bdd->prepare('SELECT img_id FROM images WHERE img_url=:img_url');
+    $statement->bindParam(":img_url", $img_url);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $id = $data['img_id'];
+    }
+    return $id;
+}
+
 function updateGroupOutput($bdd, $id_group, $id_image) {
-    $query = $bdd->prepare("UPDATE SET xyz='" . $x . "x" . $y . "x" . $z . "' WHERE id=" . $id);
-    $query->execute();
+    $statement= $bdd->prepare("UPDATE workshop_group SET final_output=:id_image WHERE id_group=:id_group");
+    $statement->bindParam(":id_image", $id_image);
+    $statement->bindParam(":id_group", $id_group);
+    $statement->execute();
 }

@@ -144,20 +144,20 @@
         <tr>
             <td>Judges</td>
             <td>
-                <input type="checkbox" id="judge1" name="judge" value="<?php echo $_SESSION['tabJudges'][0];?>">
+                <input type="radio" id="judge1" name="judge" value="<?php echo $_SESSION['tabJudges'][0];?>">
                 <label for="judge1"><?php echo $_SESSION['tabJudges'][2];?></label>
-                <input type="checkbox" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][3];?>">
+                <input type="radio" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][3];?>">
                 <label for="judge2"><?php echo $_SESSION['tabJudges'][5];?></label>
-                <input type="checkbox" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][6];?>">
+                <input type="radio" id="judge2" name="judge" value="<?php echo $_SESSION['tabJudges'][6];?>">
                 <label for="judge2"><?php echo $_SESSION['tabJudges'][8];?></label>
             </td>
         </tr>
         <tr>
             <td>Technicians</td>
             <td>
-                <input type="checkbox" id="tech1" name="tech" value="<?php echo $_SESSION['tabTech'][0];?>">
+                <input type="radio" id="tech1" name="tech" value="<?php echo $_SESSION['tabTech'][0];?>">
                 <label for="tech1"><?php echo $_SESSION['tabTech'][2];?></label>
-                <input type="checkbox" id="tech2" name="tech" value="<?php echo $_SESSION['tabTech'][3];?>">
+                <input type="radio" id="tech2" name="tech" value="<?php echo $_SESSION['tabTech'][3];?>">
                 <label for="tech2"><?php echo $_SESSION['tabTech'][5];?></label>
             </td>
         </tr>

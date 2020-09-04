@@ -80,7 +80,8 @@ $img_type = $imageFileType;
 $img_url = $file;
 
 uploadImage($bdd, $img_nom, $img_taille, $img_type, $img_url, $id_group);
-updateGroupOutput();
+$img_id = getIdImagebyUrl($bdd, $img_url);
+updateGroupOutput($bdd, $id_group, $img_id);
 
 $url = getGroupImage($bdd, $id_group);
 $_SESSION['output'] = $url;

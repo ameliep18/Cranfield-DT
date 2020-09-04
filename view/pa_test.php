@@ -21,8 +21,6 @@ $_SESSION['id_activity5'] = $id_activity?>
 </br></br>
 <input type="button" class="button" onclick=window.location.href="../controller/pa_attendworkshop.php" value="Go back" />
 </br></br>
-<input type="button" class="button" onclick=window.location.href="../controller/pa_completeactivity?id=<?php echo $_SESSION['id_activity5']?>" value="Complete" />
-</br></br>
 <form action="../controller/pa_test_form.php" method="post">
     <h2 style="font-size: 14px"> Summarize your feedback:</h2></br>
     <textarea rows="10" class="fields" name="feedback"></textarea></br>

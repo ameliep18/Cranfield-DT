@@ -34,7 +34,7 @@ if (!isset($_SESSION)) {
         <Strong>Start date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][2]; ?> <Strong>  End date: </Strong> <?php echo $_SESSION['tabMyWorkshop'][3]; ?> </br></br>
         <Strong>Goals: </Strong> <?php echo $_SESSION['tabMyWorkshop'][4]; ?> </br></br>
         <Strong>Coordinator: </Strong> <?php echo $_SESSION['tabMyWorkshop'][6]; ?> </br></br>
-        <Strong>Judges: </Strong> Alan, Mary and Patrick </br></br>
+        <Strong>Judge: </Strong> <?php echo $_SESSION['tabMyWorkshop'][7]; ?> </br></br>
         <Strong>Technician: </Strong> <?php echo $_SESSION['tabMyWorkshop'][8]; ?> </br></br>
         <Strong>Number of groups: </Strong> <?php echo $_SESSION['tabMyWorkshop'][9]; ?>
     </div>

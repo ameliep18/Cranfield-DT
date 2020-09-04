@@ -42,8 +42,10 @@ catch (Exception $e)
     die('Error : ' . $e->getMessage());
 }
 $id_activity=$_SESSION['id_activity1'];
-$query = $bdd->prepare("SELECT * FROM notes WHERE id_activity=:id_activity ORDER BY id_note DESC");
+$id_group=$_SESSION['id_group'];
+$query = $bdd->prepare("SELECT * FROM notes WHERE (id_activity=:id_activity AND id_group=:id_group) ORDER BY id_note DESC");
 $query->bindParam(":id_activity", $id_activity);
+$query->bindParam(":id_group", $id_group);
 $query->execute();
 $notes = '';
 $left='';

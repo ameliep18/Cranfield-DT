@@ -10,8 +10,9 @@ if (!isset($_SESSION)) {
 }
 $id_participant = $_SESSION['id'];
 $id_workshop = getWorkshopIdFromUserId($bdd, $id_participant);
+$id_group = $_SESSION['id_group'];
 
-$tabActivities = displayWorkshopActivities($bdd, $id_workshop);
+$tabActivities = displayWorkshopActivities($bdd, $id_workshop, $id_group);
 $link = getLink($bdd, $id_workshop);
 
 //Add the list of workshops in a session variable

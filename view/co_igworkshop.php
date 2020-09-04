@@ -26,8 +26,8 @@
         <th>End Date</th>
         <th>Goals</th>
         <th>Coordinator</th>
-        <th>Judges</th>
-        <th>Technicians</th>
+        <th>Judge</th>
+        <th>Technician</th>
         <th>Number of group(s)</th>
     </tr>
     <?php

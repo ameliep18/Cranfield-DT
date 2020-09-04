@@ -151,7 +151,7 @@ function updateParticipantGroupId ($bdd, $participants, $id_group) {
     }
 }
 
-function createWorkshopActivities($bdd, $id_workshop) {
+function createWorkshopActivities($bdd, $id_workshop, $id_group) {
     $title[]='Empathize';
     $title[]='Define';
     $title[]='Ideate';
@@ -175,16 +175,18 @@ function createWorkshopActivities($bdd, $id_workshop) {
     $status = 0;
     $imax=5;
     for ($i=0; $i<$imax; $i=$i+1) {
-        $statement = $bdd->prepare('INSERT INTO workshop_activity(id_activity, id_workshop, title, duration, com_method, aim, status)
+        $statement = $bdd->prepare('INSERT INTO workshop_activity(id_activity, id_workshop, id_group, title, duration, com_method, aim, status)
 VALUES(
 NULL,
 :id_workshop, 
+:id_group,
 :title,
 :duration,
 :com_method,
 :aim,
 :status)');
         $statement->bindParam(":id_workshop", $id_workshop);
+        $statement->bindParam(":id_group", $id_group);
         $statement->bindParam(":title", $title[$i]);
         $statement->bindParam(":duration", $duration[$i]);
         $statement->bindParam(":com_method", $com_method[$i]);
