@@ -303,9 +303,27 @@ function modifyPassword(PDO $bdd, $id, $newpassword) {
     $statement->execute();
 }
 
+function modifyInfo(PDO $bdd, $id, $newemail, $newjob) {
+    $statement = $bdd->prepare('UPDATE stakeholders SET email=:email, job=:job WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $id);
+    $statement->bindParam(":email", $newemail);
+    $statement->bindParam(":job", $newjob);
+    $statement->execute();
+}
+
+function updateInfo (PDO $bdd, $id_participant) {
+    $statement = $bdd->prepare('SELECT email, job FROM stakeholders WHERE id_stakeholder=:id');
+    $statement->bindParam(":id", $id_participant);
+    $statement->execute();
+    while ($data = $statement->fetch()) {
+        $tab[] = $data['email'];
+        $tab[] = $data['job'];
+    }
+    return $tab;
+}
+
 //Function to display the workshop ID of the user knowing his ID
 function getWorkshopIdFromUserId(PDO $bdd, $id_participant) {
-
     $statement = $bdd->prepare('SELECT id_workshop FROM stakeholders WHERE id_stakeholder=:id');
     $statement->bindParam(":id", $id_participant);
     $statement->execute();

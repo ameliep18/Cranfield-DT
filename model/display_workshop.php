@@ -92,6 +92,19 @@ function displayMyWorkshops(PDO $bdd, $id, $status) {
     return $tab;
 }
 
+
+function displayMyGroupsID(PDO $bdd, $id_expert) {
+    $statement = $bdd->prepare('SELECT id_group, id_workshop FROM workshop_group WHERE id_expert=:id_expert');
+    $statement->bindParam(":id_expert", $id_expert);
+    $statement->execute();
+    $tab=array();
+    while ($data = $statement->fetch()) {
+        $tab[] = $data['id_group'];
+        $tab[] = $data['id_workshop'];
+    }
+    return $tab;
+}
+
 //Function to display my workshop
 function displayMyWorkshop(PDO $bdd, $id_workshop) {
     $statement = $bdd->prepare('SELECT * FROM workshop WHERE id_workshop=:id');

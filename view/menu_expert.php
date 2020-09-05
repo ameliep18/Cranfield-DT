@@ -16,7 +16,7 @@ echo '<link rel="stylesheet" type="text/css" href="C:/wamp64/www/OLC/view/menu_a
         <li><a class="active" href="homepage.php">Home</a></li>
         <li><a href="#">Design Thinking workshops</a>
             <ul>
-                <li><a href="#">In-going Design Thinking workshops</a></li>
+                <li><a href="../controller/expert_igworkshop.php">In-going Design Thinking workshops</a></li>
             </ul>
         </li>
         <li><a href="../view/myprofile.php">My Profile</a></li>

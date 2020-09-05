@@ -60,7 +60,14 @@ if (!isset($_SESSION)) {
          </br>
         </br></br>
         </div>
-        <input type="button" class="button" onclick=window.location.href="../view/modifypassword.php" value="Modify my password" />
+        <?php if ($_SESSION['status']==1) { ?>
+            <input type="button" class="button" onclick=window.location.href="../view/pa_modifyinfo.php" value="Complete my information" /> </br> </br>
+            <input type="button" class="button" onclick=window.location.href="../view/modifypassword.php" value="Modify my password" />
+        <?php }
+        else { ?>
+            <input type="button" class="button" onclick=window.location.href="../view/modifypassword.php" value="Modify my password" />
+        <?php }?>
+
     </div>
 
 </div>

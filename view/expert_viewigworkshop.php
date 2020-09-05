@@ -28,26 +28,26 @@ if (!isset($_SESSION)) {
         <th>Goals</th>
         <th>Coordinator</th>
         <th>Judges</th>
-        <th>Number of group(s)</th>
+        <th>My group ID</th>
     </tr>
     <?php
-    $imax = sizeof($_SESSION['tabWorkshops']);
+    $imax = sizeof($_SESSION['tabWorkshop']);
 
     for ($i=0; $i<$imax; $i=$i+10) {
     ?>
 
     <tbody> <!-- Content of the table -->
     <tr>
-        <td><?php echo $id = $_SESSION['tabWorkshops'][$i];?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+1]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+2]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+3]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+4]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+6]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+7]; ?></td>
-        <td><?php echo $_SESSION['tabWorkshops'][$i+9]; ?></td>
+        <td><?php echo $id = $_SESSION['tabWorkshop'][$i];?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+1]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+2]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+3]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+4]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+6]; ?></td>
+        <td><?php echo $_SESSION['tabWorkshop'][$i+7]; ?></td>
+        <td><?php echo $_SESSION['tabIDGgroups'][$i]; ?></td>
         <td class="button">
-            <input type="button" onclick=window.location.href="../controller/tech_viewtheworkshop?id=<?php echo $id?>" value="Help prototyping" />
+            <input type="button" onclick=window.location.href="../controller/expert_helpgroup?id=<?php echo $id?>" value="Help my group" />
         </td>
     </tr>
     <?php } ?>
@@ -57,3 +57,4 @@ if (!isset($_SESSION)) {
 
 </body>
 </html>
+

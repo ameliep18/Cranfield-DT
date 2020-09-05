@@ -14,4 +14,5 @@ $id = $_GET['id'];
 $_SESSION['id_workshop'] = $id;
 $_SESSION['title'] = getTitleFromId($bdd, $id);
 $_SESSION['link'] = getLink($bdd, $id);
-header('location: ../view/tech_helpprototyping.php');
+
+header('location: ../view/expert_helpgroup.php');

@@ -22,6 +22,7 @@ if (!isset($_SESSION)) {
 </br>
 <h3> <a href="<?php echo $_SESSION['link']; ?>" target="_blank"> Access the Microsoft Teams global meeting </a></h3>
 </br> </br>
-<input type="button" class="button" onclick=window.location.href="../controller/tech_igworkshop.php" value="Go back" />
+<input type="button" class="button" onclick=window.location.href="../controller/expert_igworkshop.php" value="Go back" />
 </body>
 </html>
+
